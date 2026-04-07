@@ -20,7 +20,7 @@ Para manter o foco na execução e no aprendizado real, utilizamos um conjunto e
 * **dbdiagram.io:** Modelagem visual do Banco de Dados e seus relacionamentos.
 
 ### Execução e Stack Técnica
-* **Front-end:** HTML5, CSS3, JavaScript Vanilla e TailwindCSS.
+* **Front-end:** HTML5, CSS3, React e TailwindCSS.
 * **Back-end Base:** Java (Spring Boot).
 * **Back-end Auxiliar (Full-Stack):** Node.js para construção de APIs complementares.
 * **Testes de Integração:** Insomnia ou Postman (validação de rotas e retornos JSON).
