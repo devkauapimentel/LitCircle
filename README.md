@@ -42,15 +42,6 @@ O projeto utiliza uma arquitetura baseada em serviços RESTful. A comunicação 
 
 ---
 
-## 📝 Regras de Negócio Iniciais (MVP)
-
-* [ ] O sistema não deve permitir o cadastro de livros duplicados (validação por ISBN ou combinação de Título e Autor).
-* [ ] Todo livro deve ter uma máquina de estados (ex: "Na Fila", "Lendo", "Finalizado", "Abandonado").
-* [ ] Avaliações (notas ou resenhas textuais) só podem ser feitas em livros com o status "Finalizado".
-* [ ] (Em Breve) Separação de dados por usuário.
-
----
-
 ## 🚀 Como Executar Localmente
 
 *(As instruções de instalação e os comandos de terminal para iniciar os servidores de desenvolvimento serão documentados aqui assim que a infraestrutura inicial for concluída).*
