@@ -105,7 +105,7 @@ Acesse: `http://localhost:5173`
 | Pessoa | Domínio principal | Domínio secundário |
 |---|---|---|
 | **Kauã** | Frontend (React, UI/UX) | Backend Node.js — chat, Pomodoro, real-time |
-| **Rafael** | Backend Java (Spring Boot, PostgreSQL) | Revisão de integrações e contratos de API |
+| **RaPhael** | Backend Java (Spring Boot, PostgreSQL) | Revisão de integrações e contratos de API |
 
 ---
 
