@@ -126,30 +126,29 @@ Tudo bem. O doc [15-git-workflow.md](15-git-workflow.md) explica **do zero** —
 
 Organizadas em 5 milestones na ordem certa:
 
-### Frontend: PicoCSS (framework CSS classless)
+### Frontend: 100% vanilla (HTML + CSS + JS na mão)
 
-Todas as telas usam **[PicoCSS](https://picocss.com)** — um CSS de 10KB que estiliza HTML semântico automaticamente. Você escreve HTML normal e já fica bonito. Depois customiza com CSS próprio pra detalhes específicos.
+Nenhuma biblioteca CSS. Tudo escrito do zero. Isso treina:
+- HTML semântico (tags corretas, formulários, acessibilidade)
+- CSS avançado (Flexbox, Grid, variáveis, responsivo)
+- JavaScript puro (DOM, fetch, eventos, lógica)
 
-```html
-<!-- Só adiciona isso no <head> de todo HTML: -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-```
+Bibliotecas só no **backend Node.js**: Express, Socket.IO, jsonwebtoken, bcrypt.
 
-**Por quê?** Economiza 60% do trabalho de CSS e permite que Kauã foque mais em JavaScript e Node.js.
+### Distribuição de trabalho
 
-### Por que o split já é 50/50
-
-Parece que Kauã tem "mais frontend", mas olhando por TEMPO:
-- Frontend com PicoCSS → rápido (~1.5h por tela)
-- Node.js backend → complexo (#15 JWT = ~4h, #25 Socket.IO = ~5h)
-- **Proporção real: ~55% front / ~45% back ≈ 50/50**
+| Kauã | Rafael |
+|------|--------|
+| 8 issues frontend + 3 issues Node.js | 11 issues Java backend |
+| Frontend = treina HTML/CSS/JS | Backend = treina Java/Spring/SQL |
+| Node.js = treina Express/JWT/Socket.IO | Java = treina Spring Boot/JPA |
 
 ### Milestone v0.1 — Esqueleto (Semana 1)
 
 | # | Issue | Quem | O que é |
 |---|-------|------|---------|
 | #4 | Setup do repositório | Ambos | Estrutura de pastas pronta |
-| #5 | Boilerplate frontend | Kauã | `index.html` + PicoCSS (framework CSS classless) |
+| #5 | Boilerplate frontend | Kauã | `index.html` + CSS reset + variáveis de cor |
 | #6 | Boilerplate backend Node | Kauã | Express + `GET /health` |
 | #7 | Boilerplate backend Java | Rafael | Spring Boot + `GET /health` |
 | #8 | PostgreSQL local | Ambos | Banco criado e rodando |
