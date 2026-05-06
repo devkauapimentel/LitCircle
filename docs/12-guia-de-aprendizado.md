@@ -1,435 +1,212 @@
-# Metodologia de Aprendizado — Estilo 42
+# Metodologia de Aprendizado — Versão Final
 
-> Como aprender programação do zero, dominar web dev, e usar a Rocketseat do jeito certo.
-
----
-
-## A filosofia da 42 (adaptada pro LitCircle)
-
-Na 42 não existe professor, não existe aula, não existe curso linear. Existe:
-
-```
-1. Um PROJETO com especificação clara (= as issues do LitCircle)
-2. DOCUMENTAÇÃO oficial das tecnologias (= man pages, MDN, spring.io)
-3. Seus COLEGAS (= Rafael, Stack Overflow)
-4. SEU CÉREBRO (= a peça mais importante)
-```
-
-### A regra de ouro da 42:
-
-**Você NÃO estuda pra depois fazer. Você FAZ e estuda o que precisa no caminho.**
-
-```
-ERRADO (escola tradicional):
-  Assistir 40h de curso → tentar fazer projeto → travar → voltar pro curso
-
-CERTO (42):
-  Ler a issue → "o que preciso saber?" → estudar SÓ isso (30 min) → fazer → errar → corrigir → aprendeu
-```
+> Duas trilhas paralelas. Uma não bloqueia a outra. Ponto.
 
 ---
 
-## Como usar a Rocketseat (sem cair em tutorial hell)
-
-Você tem o curso fullstack da Rocketseat. **NÃO assista ele linearmente.** Use como dicionário:
-
-### A forma ERRADA de usar a Rocketseat
+## Suas 2 trilhas de estudo
 
 ```
-❌ Semana 1: assiste módulo 1 (HTML)
-❌ Semana 2: assiste módulo 2 (CSS)
-❌ Semana 3: assiste módulo 3 (JS)
-❌ Semana 4: assiste módulo 4 (Node)
-❌ Semana 5: "agora vou começar o projeto"
-❌ Semana 5: trava porque não lembra nada
+TRILHA A — ROCKETSEAT (a faculdade)
+├── Linear, no seu ritmo
+├── Assistir, fazer exercícios, seguir o currículo
+├── Horário fixo separado do projeto
+└── Objetivo: base teórica ampla
 
-Resultado: 4 semanas de vídeo, 0 linhas de código, frustração.
+TRILHA B — LITCIRCLE (o projeto 42)
+├── Learning by doing, issue por issue
+├── Não assiste nada antes — lê docs, pesquisa, faz
+├── Horário fixo separado da Rocketseat
+└── Objetivo: skill real aplicado
 ```
 
-### A forma CERTA de usar a Rocketseat
+### Como se relacionam
 
-```
-✅ Pega Issue #5 (Boilerplate frontend)
-✅ Lê os critérios: "index.html com reset CSS e variáveis de cor"
-✅ Não sabe CSS variables → Rocketseat: assiste SÓ a aula de CSS variables (15 min)
-✅ Implementa no projeto
-✅ Funciona → próximo critério
-✅ Não sabe Flexbox → Rocketseat: assiste SÓ Flexbox (20 min)
-✅ Implementa → funciona → issue concluída
+| Situação | O que acontece |
+|----------|---------------|
+| Rocketseat ensinou fetch() antes da Issue #13 | Ótimo, você já sabe. Implementa mais rápido. |
+| Issue #6 pede Express mas Rocketseat não cobriu | Tudo bem. Lê expressjs.com (30 min) e faz. |
+| Rocketseat ensinou React | Ignora pro LitCircle. O MVP é HTML/CSS/JS. |
+| Conceito aparece nas duas trilhas | Perfeito. Aprendeu 2x de formas diferentes = dominou. |
 
-Resultado: 35 min de vídeo + 2h de código real + issue entregue + aprendeu 2 conceitos.
-```
+### A regra de ouro
 
-### Mapa: qual módulo da Rocketseat consultar por issue
+**Uma trilha NUNCA bloqueia a outra.**
 
-| Issue | O que precisa | Onde na Rocketseat | Alternativa gratuita |
-|-------|--------------|-------------------|---------------------|
-| #5 Boilerplate frontend | HTML + CSS | Módulo HTML/CSS | MDN: HTML basics + CSS first steps |
-| #13 Tela de login | HTML forms + CSS | Módulo Formulários | MDN: Your first form |
-| #14 Tela de cadastro | Mesma coisa | Mesmo módulo | Mesma alternativa |
-| #6 Boilerplate Node | Node + Express | Módulo Node.js | expressjs.com/starter |
-| #13/#14 fetch API | JavaScript async | Módulo JS assíncrono | javascript.info cap 11 |
-| #21-#23 Telas | DOM manipulation | Módulo JS no browser | javascript.info cap 13-14 |
-| #25 Socket.IO | WebSocket | Módulo real-time (se tiver) | socket.io/get-started |
-| #15 JWT no Node | Autenticação | Módulo Auth | jwt.io/introduction |
-
-**Regra:** assista no MÁXIMO 30 minutos por sessão. Depois para e implementa. Se precisar de mais, volta e assiste mais 15 min. **Nunca mais de 1h de vídeo seguida.**
+- Não espere a Rocketseat cobrir Express pra fazer a Issue #6.
+- Não pare a Rocketseat porque o LitCircle tá puxado.
+- São independentes. Se uma acelera a outra, é bônus — não dependência.
 
 ---
 
-## Como aprender cada tecnologia — O mapa completo
+## TRILHA B — A metodologia 42 pro LitCircle
 
-### HTML — A estrutura
+### Ferramentas permitidas (semanas 1-4)
 
-**O que é:** esqueleto da página. Tags que definem o que cada coisa é (título, parágrafo, botão, formulário).
+| ✅ PODE | ❌ NÃO PODE |
+|---------|-------------|
+| Documentação oficial (MDN, spring.io, expressjs.com) | IA (ChatGPT, Copilot, etc.) |
+| Google (pesquise o PROBLEMA em inglês) | Pedir código pra alguém |
+| Stack Overflow (leia e entenda, não copie) | Copiar código sem entender cada linha |
+| Glossário do repo (`16-glossario.md`) | Assistir vídeo antes de tentar |
+| Parceiro (Rafael, após 45 min travado) | Ficar mais de 45 min sem pedir ajuda |
+| javascript.info, sqlbolt.com, learngitbranching | Tutorial do YouTube como primeira opção |
 
-**Como aprender (3h total, não linear):**
+### Como executar cada issue (o protocolo)
 
 ```
-AGORA (1h):
-├── MDN: "Getting started with HTML" → leia, faça os exemplos
-├── Foque em: <div>, <h1>-<h6>, <p>, <a>, <button>, <form>, <input>, <label>
-└── Resultado: sabe criar qualquer formulário básico
+1. LER a issue (5 min)
+   └── Critérios de aceite → marcar o que NÃO sei
 
-SOB DEMANDA (quando a issue pedir):
-├── <table> → quando fizer lista de participantes
-├── <select>, <textarea> → quando fizer formulário de criar sessão
-└── Semântica (<header>, <main>, <nav>) → quando refatorar
+2. PESQUISAR o que não sei (15-30 min)
+   └── Doc oficial da tecnologia → ler 1 página relevante
+
+3. OLHAR como outros fizeram (10 min)
+   └── GitHub: "[tecnologia] example" → ver estrutura, NÃO copiar
+
+4. CODAR (maior parte do tempo)
+   └── Testar a cada 5 linhas → ler erros → console.log
+
+5. REFATORAR (15 min)
+   └── "Repeti algo?" → extrair │ "Confuso?" → renomear
+
+6. ANOTAR na issue (2 min)
+   └── Comentar no GitHub: "O que aprendi nessa issue"
+
+7. PR → Review → Merge → Próxima
 ```
 
-**Recurso primário:** [MDN HTML](https://developer.mozilla.org/pt-BR/docs/Learn/HTML)  
-**Rocketseat:** Módulo HTML (consultar, não assistir tudo)
+### O que te PROVA que aprendeu (avaliação 42)
 
-**Exercício 42:** abra o VSCode, crie `teste.html`, e construa um formulário de login com email + senha + botão. Sem CSS. Só HTML. Se funciona no navegador, você sabe HTML suficiente pra começar.
+Na 42, depois de terminar um projeto, outro aluno te avalia. Ele aponta pra qualquer linha do seu código e pergunta: **"o que isso faz e por que tá aí?"**
+
+Faça isso com você mesmo. Depois de cada issue:
+
+```
+TESTE: feche o editor. Abra um arquivo novo.
+Tente reescrever a parte principal do que fez SEM olhar.
+
+Se conseguiu → dominou.
+Se não conseguiu → volte e releia o que fez até entender cada linha.
+```
+
+Exemplos por issue:
+
+| Issue | Teste 42 (faça SEM olhar seu código) |
+|-------|--------------------------------------|
+| #5 Boilerplate frontend | Crie um HTML com CSS variables e reset do zero |
+| #6 Boilerplate Node | Crie um servidor Express com GET /health do zero |
+| #13 Tela de login | Faça um formulário que faz fetch POST e trata erro |
+| #15 JWT no Node | Escreva um middleware que valida JWT do zero |
+| #25 Socket.IO | Crie um chat simples com Socket.IO do zero |
+
+**Se consegue refazer do zero, você DOMINOU. Se só funciona porque copiou, você não aprendeu.**
 
 ---
 
-### CSS — A aparência
+## Como aprender cada tecnologia (pela trilha B)
 
-**O que é:** regras visuais. Cor, tamanho, posição, espaçamento.
+A trilha B não tem "módulos". Você aprende sob demanda. Mas cada tecnologia tem um recurso primário e um exercício de validação.
 
-**Como aprender (4h total, não linear):**
+### HTML
 
-```
-AGORA (1.5h):
-├── MDN: "CSS first steps" → leia até "How CSS works"
-├── Foque em: seletores (classe, id), box model, display, color, font
-├── CSS Variables: "--primary: #7c3aed;" → usa em tudo
-└── Resultado: sabe estilizar qualquer elemento
+| O que aprender | Quando | Recurso | Tempo |
+|---------------|--------|---------|-------|
+| Tags básicas (div, h1, p, a, form, input, button) | Semana 0 | [MDN Learn HTML](https://developer.mozilla.org/pt-BR/docs/Learn/HTML) | 1h |
+| Formulários completos | Issue #13/#14 | MDN: "Your first form" | 30 min |
+| Semântica (header, main, nav) | Refatoração | MDN: "HTML elements reference" | Sob demanda |
 
-SEMANA 2 (1h, quando fizer telas):
-├── Flexbox: css-tricks.com/snippets/css/a-guide-to-flexbox
-├── É isso. Flexbox resolve 90% dos layouts.
-└── Resultado: sabe alinhar qualquer coisa
+**Exercício 42:** crie um formulário de login (email + senha + botão + link "cadastre-se") num HTML em branco. Sem olhar nada. Se funciona no navegador, você sabe HTML.
 
-SOB DEMANDA:
-├── Grid → quando fizer layout de dashboard
-├── Media queries → quando fizer responsivo
-├── Transições → quando fizer animações suaves
-```
+### CSS
 
-**Recurso primário:** [MDN CSS](https://developer.mozilla.org/pt-BR/docs/Learn/CSS) + [CSS Tricks Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)  
-**Rocketseat:** Módulo CSS (consultar Flexbox e Grid)
+| O que aprender | Quando | Recurso | Tempo |
+|---------------|--------|---------|-------|
+| Seletores, cores, fontes, box model | Semana 0 | [MDN Learn CSS](https://developer.mozilla.org/pt-BR/docs/Learn/CSS) | 1.5h |
+| CSS Variables | Issue #5 | MDN: "Using CSS custom properties" | 15 min |
+| Flexbox | Issue #13 (layout) | [Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) | 30 min |
+| Grid | Issue #21 (dashboard) | [Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) | 30 min |
 
-**Exercício 42:** pegue o formulário HTML que criou e estilize com a paleta do LitCircle (navy #0f172a, purple #7c3aed, amber #f59e0b). Se parece com o wireframe do login, você sabe CSS suficiente.
+**Exercício 42:** estilize o formulário de login com a paleta do LitCircle (navy, purple, amber). Centralize na tela com Flexbox. Sem olhar nada. Se parece profissional, você sabe CSS.
 
----
+### JavaScript
 
-### JavaScript — A lógica
+| O que aprender | Quando | Recurso | Tempo |
+|---------------|--------|---------|-------|
+| Variáveis, tipos, if/else, loops | Semana 0 | [javascript.info](https://javascript.info) cap 2 | 1h |
+| Objetos e arrays | Semana 0 | javascript.info cap 4-5 | 1h |
+| Funções, arrow functions | Semana 0 | javascript.info cap 6 | 30 min |
+| DOM (querySelector, createElement, events) | Issue #5/#13 | javascript.info cap 13-14 | 1h |
+| async/await, fetch | Issue #13 | javascript.info cap 11 + MDN Fetch | 1h |
+| localStorage | Issue #13 | MDN: "Window.localStorage" | 15 min |
+| Módulos (import/export) | Quando organizar código | javascript.info cap 13 "Modules" | 30 min |
 
-**O que é:** faz a página fazer coisas. Clicou no botão → acontece algo. Dados vêm do servidor → aparecem na tela.
+**Exercício 42:** no console do navegador (F12), crie um array de 5 objetos `{nome, idade}`, filtre os maiores de 18, e mostre os nomes com `.map()`. Sem olhar nada.
 
-**Como aprender (6h total, não linear):**
+### Node.js + Express
 
-```
-SEMANA 0 (3h — OBRIGATÓRIO antes de codar):
-├── javascript.info cap 2: "JavaScript Fundamentals"
-│   → variáveis (let, const), tipos, if/else, loops
-├── javascript.info cap 5: "Data types" (só strings e arrays)
-│   → .map(), .filter(), .forEach(), template literals
-├── javascript.info cap 4.1-4.4: "Objects"
-│   → criar objeto, acessar propriedades
-└── Resultado: sabe ler e escrever JS básico
+| O que aprender | Quando | Recurso | Tempo |
+|---------------|--------|---------|-------|
+| Servidor básico + rotas | Issue #6 | [expressjs.com](https://expressjs.com) "Hello World" + "Routing" | 1h |
+| Middleware | Issue #15 | expressjs.com "Writing middleware" | 30 min |
+| Socket.IO | Issue #25 | [socket.io/get-started](https://socket.io/get-started/chat) | 1h |
 
-SEMANA 1-2 (sob demanda, quando issues pedirem):
-├── javascript.info cap 11: "Promises, async/await"
-│   → precisa pra fetch() — Issue #13
-├── MDN: "Fetch API" → fazer requisições HTTP
-│   → precisa pra todas as telas
-├── javascript.info cap 13: "Document" (DOM)
-│   → querySelector, createElement, addEventListener
-│   → precisa pra manipular a página
-└── Resultado: sabe fazer fetch, manipular DOM, tratar erros
+**Exercício 42:** crie um servidor Express do zero que responde JSON em 3 rotas diferentes. Sem olhar código anterior.
 
-SOB DEMANDA:
-├── localStorage → Issue #13 (login)
-├── Socket.IO client → Issue #26 (chat)
-├── Módulos (import/export) → quando organizar código
-```
+### SQL
 
-**Recurso primário:** [javascript.info](https://javascript.info)  
-**Rocketseat:** Módulo JavaScript (consultar async/await e DOM)
+| O que aprender | Quando | Recurso | Tempo |
+|---------------|--------|---------|-------|
+| SELECT, INSERT, UPDATE, DELETE, WHERE | Semana 0 | [sqlbolt.com](https://sqlbolt.com) | 2h |
+| JOIN | Quando entender relações | sqlbolt.com lições 6-7 | 30 min |
+| CREATE TABLE, constraints | Issue #8 | Doc 07-modelo-de-dados.md | 30 min |
 
-**Exercício 42:** abra o console do navegador (F12 → Console). Crie um array de nomes, filtre os que têm mais de 5 letras, e mostre no console. Se funcionou, você sabe JS suficiente pra começar.
+**Exercício 42:** no psql, crie 2 tabelas relacionadas, insira dados, e faça um JOIN. Sem olhar nada.
 
-```javascript
-// Tenta fazer isso SEM olhar a resposta:
-const nomes = ["Kauã", "Rafael", "Ana", "Beatriz", "Jo"];
-// Filtre os nomes com mais de 3 letras
-// Mostre cada um no console com template literal: "Nome: Kauã"
-```
+### Git
+
+| O que aprender | Quando | Recurso | Tempo |
+|---------------|--------|---------|-------|
+| commit, branch, merge, push, pull | Semana 0 | [learngitbranching.js.org](https://learngitbranching.js.org) | 1h |
+| Rebase, conflitos | Quando acontecer | Doc 15-git-workflow.md | Sob demanda |
+
+**Exercício 42:** crie um repo, faça 3 commits na main, crie uma branch, faça 2 commits lá, volte pra main, faça merge. Sem olhar nada.
 
 ---
 
-### Node.js + Express — O servidor
-
-**O que é:** JavaScript rodando fora do navegador, no servidor. Express é um framework que facilita criar rotas HTTP.
-
-**Como aprender (2h, sob demanda — Issue #6):**
+## Cronograma das duas trilhas
 
 ```
-QUANDO CHEGAR NA ISSUE #6:
-├── expressjs.com: "Hello World" (15 min)
-│   → cria servidor, define rota GET /health
-├── expressjs.com: "Basic routing" (15 min)
-│   → GET, POST, rotas com parâmetros
-├── Rocketseat: Módulo Node.js — só a parte de Express
-└── Resultado: servidor rodando com GET /health
+HORÁRIO DO DIA (exemplo):
 
-SOB DEMANDA:
-├── Middleware → Issue #15 (JWT validation)
-├── Socket.IO → Issue #25 (chat)
-├── CORS → quando frontend não conectar
+Manhã:    Rocketseat (trilha A) — 1-2h no ritmo do curso
+Tarde:    LitCircle (trilha B) — 2-3h nas issues
+Noite:    Livre / revisão / Rocketseat extra
+
+OU (se pouco tempo):
+
+Seg/Qua/Sex:  Rocketseat
+Ter/Qui/Sab:  LitCircle
+Dom:          Call com Rafael + revisão semanal
 ```
 
-**Recurso primário:** [expressjs.com](https://expressjs.com)  
-**Exercício 42:** crie um `index.js` que responde `{ "status": "ok" }` em `GET /health`. Se `curl localhost:3001/health` retorna o JSON, você sabe Express suficiente.
+**O importante:** horários FIXOS pra cada trilha. Não misture. Quando é hora de Rocketseat, é Rocketseat. Quando é hora de LitCircle, é LitCircle.
 
 ---
 
-### SQL + PostgreSQL — O banco
-
-**O que é:** linguagem pra criar tabelas, inserir dados, e buscar dados.
-
-**Como aprender (3h total):**
+## O resumo absoluto final
 
 ```
-SEMANA 0 (2h — OBRIGATÓRIO):
-├── sqlbolt.com: todas as lições (é interativo, divertido)
-│   → SELECT, WHERE, INSERT, UPDATE, DELETE, JOIN
-└── Resultado: sabe ler e escrever SQL básico
+TRILHA A (Rocketseat):
+  └── Linear, como faculdade. Segue o currículo. Horário fixo.
 
-SOB DEMANDA:
-├── pgexercises.com → exercícios mais avançados
-├── CREATE TABLE → quando ver o doc 07-modelo-de-dados.md
-├── Indexes → quando entender performance
-```
+TRILHA B (LitCircle — estilo 42):
+  ├── Semana 0: base mínima (JS, SQL, Git, HTTP) — 7h
+  ├── Semanas 1-4: issues com docs + Google. ZERO IA.
+  ├── Semana 5+: IA como colega socrático (se quiser).
+  ├── Cada issue: ler → pesquisar → olhar exemplos → codar → refatorar → anotar
+  ├── Depois de cada issue: teste 42 (refaz do zero sem olhar)
+  └── Ferramentas: docs oficiais, Google em inglês, Stack Overflow, parceiro
 
-**Recurso primário:** [sqlbolt.com](https://sqlbolt.com) → [pgexercises.com](https://pgexercises.com)
-
-**Exercício 42:** abra o terminal do PostgreSQL (`psql litcircle`), crie uma tabela `teste` com `id` e `nome`, insira 3 registros, e selecione os que têm nome começando com "K". Se funcionou, você sabe SQL suficiente.
-
----
-
-### Git — O controle de versão
-
-**Como aprender (1h — OBRIGATÓRIO):**
-
-```
-SEMANA 0 (1h):
-├── learngitbranching.js.org: todos os níveis "Main" + "Remote"
-│   → é um jogo, aprende fazendo
-├── Leia: 15-git-workflow.md do repo
-└── Resultado: sabe commit, branch, merge, push, pull, rebase
-```
-
-**Recurso primário:** [learngitbranching.js.org](https://learngitbranching.js.org) + [Pro Git Book](https://git-scm.com/book/pt-br/v2)
-
----
-
-## O Protocolo Completo — Como executar cada issue
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  0. PEGAR a issue do board                                  │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  1. LER a issue (5 min)                                     │
-│     → Critérios de aceite → marcar o que NÃO sei            │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  2. ESTUDAR só o que não sei (15-30 min)                    │
-│     → Doc oficial OU Rocketseat (SÓ o trecho relevante)     │
-│     → Máximo 30 min de leitura/vídeo antes de codar         │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  3. OLHAR como outros fizeram (10 min)                      │
-│     → GitHub: "[tecnologia] example"                        │
-│     → Ver a ESTRUTURA, não copiar código                    │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  4. CODAR (maior parte do tempo)                            │
-│     → Testar a cada 5 linhas                                │
-│     → Ler erros com calma                                   │
-│     → console.log é seu melhor amigo                        │
-│     → Travou 45 min? → documenta na issue → chama parceiro  │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  5. REFATORAR (15 min)                                      │
-│     → "Tem algo repetido?" → extrair pra função/componente  │
-│     → "Tem algo confuso?" → renomear                        │
-│     → Fez errado? ÓTIMO → refatorar = aprender 2x           │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  6. ANOTAR na issue o que aprendeu (2 min)                  │
-│     → "O que aprendi:" → lista de conceitos novos           │
-│     → Vira documentação viva do projeto                     │
-└─────────────────────────┬───────────────────────────────────┘
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  7. PR → Review → Merge → PRÓXIMA ISSUE                    │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Exercícios 42 — Validação de conhecimento
-
-Antes de começar cada milestone, faça estes exercícios pra validar que sabe o mínimo:
-
-### Antes da Milestone v0.1 (Esqueleto)
-
-| # | Exercício | Validação |
-|---|-----------|-----------|
-| 1 | Crie um `index.html` com formulário de login (email + senha + botão) | Abre no navegador e mostra o formulário |
-| 2 | Estilize com CSS: fundo navy, botão purple, input com borda | Parece profissional |
-| 3 | No console (F12), crie um array e use `.filter()` | Retorna os itens filtrados |
-| 4 | Faça `git init`, commit, crie branch, volte pra main | `git log` mostra o commit |
-| 5 | No psql: `CREATE TABLE`, `INSERT`, `SELECT` | Retorna os dados |
-
-### Antes da Milestone v0.2 (Auth)
-
-| # | Exercício | Validação |
-|---|-----------|-----------|
-| 1 | Faça `fetch('https://jsonplaceholder.typicode.com/posts')` e mostre no console | Array de posts aparece |
-| 2 | Faça um `POST` com `fetch()` enviando JSON | Resposta 201 no console |
-| 3 | Use `localStorage.setItem()` e `getItem()` | Valor persiste entre refreshes |
-| 4 | Crie um servidor Express com `GET /health` | `curl localhost:3001/health` retorna JSON |
-
-### Antes da Milestone v0.3 (Sessões)
-
-| # | Exercício | Validação |
-|---|-----------|-----------|
-| 1 | Crie uma página que faz GET e mostra dados numa lista HTML | Lista aparece com dados reais |
-| 2 | Crie um formulário que faz POST e mostra resposta | Dados enviados e resposta exibida |
-| 3 | Use `document.createElement()` pra adicionar itens dinamicamente | Itens aparecem sem recarregar |
-
----
-
-## Cronograma de estudo
-
-```
-SEMANA 0 (antes de codar — 1 dia, ~7h):
-├── Git: learngitbranching.js.org (1h)
-├── SQL: sqlbolt.com completo (2h)
-├── HTTP: MDN HTTP Overview (1h)
-├── JS: javascript.info cap 2, 4, 5 (3h)
-├── Exercícios 42 da Milestone v0.1
-└── NÃO assista curso nenhum linearmente
-
-SEMANAS 1-2 (Milestone v0.1 + v0.2):
-├── Estudo: SÓ o que a issue atual pede
-├── Rocketseat: consulta pontual (máx 30 min por sessão)
-├── Doc oficial: primeira fonte pra tudo
-└── Exercícios 42 da Milestone v0.2 (antes de começar)
-
-SEMANAS 3-5 (Milestone v0.3):
-├── Mesmo padrão: issue → estudar → fazer → anotar
-├── Mais DOM manipulation (javascript.info cap 13-14)
-└── Exercícios 42 da Milestone v0.3
-
-SEMANAS 6-8 (Milestone v0.4 + v0.5):
-├── Socket.IO (sob demanda)
-├── Deploy (doc 09-deploy.md quando chegar lá)
-└── A essa altura vocês já sabem buscar sozinhos
-```
-
----
-
-## Anti-padrões: o que NÃO fazer
-
-| Anti-padrão | Por que é ruim | O que fazer |
-|-------------|---------------|-------------|
-| Assistir a Rocketseat inteira antes de codar | Tutorial hell — acha que sabe mas não sabe fazer | Consulte SÓ o que a issue pede (máx 30 min) |
-| Estudar React "porque vai precisar depois" | Não vai precisar agora. Vai confundir. | Só estude o que a issue ATUAL exige |
-| Ler a doc inteira de Express | Over-engineering — 90% você não vai usar no MVP | Leia o "Getting Started" e pare |
-| Ficar no console sem fazer projeto | Exercícios soltos não constroem skill real | O projeto É o exercício |
-| Copiar código do Stack Overflow | Funciona mas não ensina | Leia a resposta, entenda, escreva o seu |
-| Assistir vídeo no 2x sem pausar | Ilusão de produtividade | Pause, implemente, depois continue |
-
----
-
-## Recursos definitivos por tecnologia
-
-| Tecnologia | Recurso PRIMÁRIO (gratuito) | Rocketseat (complementar) |
-|-----------|---------------------------|--------------------------|
-| HTML | [MDN Learn HTML](https://developer.mozilla.org/pt-BR/docs/Learn/HTML) | Módulo HTML |
-| CSS | [MDN Learn CSS](https://developer.mozilla.org/pt-BR/docs/Learn/CSS) + [Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) | Módulo CSS |
-| JavaScript | [javascript.info](https://javascript.info) | Módulo JS |
-| Node/Express | [expressjs.com](https://expressjs.com) | Módulo Node |
-| Socket.IO | [socket.io/docs](https://socket.io/docs/v4/) | Módulo real-time |
-| SQL | [sqlbolt.com](https://sqlbolt.com) | — |
-| Git | [learngitbranching.js.org](https://learngitbranching.js.org) | — |
-| HTTP | [MDN HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview) | — |
-
-**Prioridade:** Doc oficial → Rocketseat (trecho específico) → Google → Stack Overflow
-
----
-
-## O resumo de tudo em 1 diagrama
-
-```
-                    ┌──────────────────────┐
-                    │  PEGA A ISSUE        │
-                    └──────────┬───────────┘
-                               ▼
-                    ┌──────────────────────┐
-                    │  O QUE NÃO SEI?      │
-                    └──────────┬───────────┘
-                               ▼
-              ┌────────────────┼────────────────┐
-              ▼                ▼                ▼
-     ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-     │  Não sei o   │ │  Não sei a   │ │  Não sei     │
-     │  CONCEITO    │ │  SINTAXE     │ │  o DESIGN    │
-     │              │ │              │ │              │
-     │  Glossário   │ │  Doc oficial │ │  Google:     │
-     │  do repo     │ │  MDN/spring  │ │  "how to..." │
-     │  → MDN       │ │  Rocketseat  │ │  GitHub      │
-     │              │ │  (trecho)    │ │  examples    │
-     └──────┬───────┘ └──────┬───────┘ └──────┬───────┘
-            └────────────────┼────────────────┘
-                             ▼
-                    ┌──────────────────────┐
-                    │  IMPLEMENTA          │
-                    │  (testa a cada 5     │
-                    │   linhas)            │
-                    └──────────┬───────────┘
-                               ▼
-                    ┌──────────────────────┐
-                    │  FUNCIONOU?          │
-                    └──────┬───────┬───────┘
-                      SIM  ▼       ▼  NÃO
-                ┌───────────┐ ┌──────────────┐
-                │ REFATORA  │ │ LÊ O ERRO    │
-                │ ANOTA     │ │ GOOGLE ERRO  │
-                │ PR        │ │ 45 MIN?      │
-                │ PRÓXIMA   │ │ → PARCEIRO   │
-                └───────────┘ └──────────────┘
+AS DUAS NÃO SE BLOQUEIAM. NUNCA.
 ```
