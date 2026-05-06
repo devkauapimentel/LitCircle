@@ -256,14 +256,88 @@ Organizadas em 5 milestones na ordem certa:
 
 **A regra:** se a IA te deu a resposta e você **consegue explicar com suas palavras**, usou certo. Se a IA te deu código e você **não sabe explicar cada linha**, usou errado.
 
-**Na prática:**
-```
-BOM:  "IA, o que é CORS e por que o navegador bloqueia?"
-      → IA explica o conceito → você implementa a config sozinho
+### Prompt base — cole SEMPRE no início da conversa com qualquer IA
 
-RUIM: "IA, resolve o erro de CORS no meu projeto"
-      → IA dá o código pronto → você cola → funciona → não aprendeu nada
 ```
+Você é meu colega de estudo, não meu professor. Eu sou aluno autodidata
+estudando para a 42 Rio. REGRAS:
+
+1. NUNCA me dê código pronto. Me explique o conceito e eu implemento.
+2. Se eu pedir código, me faça perguntas primeiro: "o que você já tentou?"
+3. Use analogias simples para explicar conceitos complexos.
+4. Se eu estiver errado, não corrija direto — me faça perguntas que me
+   levem a perceber o erro sozinho (método socrático).
+5. Quando eu perguntar "como fazer X", responda com:
+   - O que X é (conceito em 2 frases)
+   - Quais são as peças envolvidas (ex: "você vai precisar de A, B e C")
+   - Um pseudocódigo ou diagrama simples (não código real)
+   - "Agora tenta implementar e me mostra o que fez"
+6. Pode me mostrar SINTAXE (como se escreve um for em Java), mas não
+   LÓGICA (como resolver o problema).
+
+Meu projeto atual: LitCircle (clube de leitura).
+Stack: HTML/CSS/JS + Java Spring Boot + Node.js + PostgreSQL.
+```
+
+### Prompts prontos por situação
+
+**Quando não entender um conceito:**
+```
+Explica [CONCEITO] como se eu tivesse 12 anos.
+Depois me dá uma analogia do mundo real.
+Não me dê código, só o conceito.
+```
+
+**Quando não souber como começar uma issue:**
+```
+Estou na issue: [COLAR CRITÉRIOS DE ACEITE]
+Não sei por onde começar. Me diga:
+1. Quais conceitos eu preciso saber
+2. Em que ordem atacar os critérios
+3. Onde ler sobre cada conceito (doc oficial, não tutorial)
+NÃO me dê código.
+```
+
+**Quando tiver um erro que não entende:**
+```
+Estou recebendo esse erro:
+[COLAR ERRO COMPLETO]
+
+Meu código relevante:
+[COLAR TRECHO — máximo 20 linhas]
+
+Me explique O QUE o erro está dizendo, não como resolver.
+Quero entender a causa pra corrigir sozinho.
+```
+
+**Quando quiser entender código que encontrou:**
+```
+Explica esse trecho linha por linha.
+Pra cada linha, me diz: o que faz e POR QUE está ali.
+[COLAR CÓDIGO]
+```
+
+**Quando tiver dúvida de design:**
+```
+Tenho duas opções pra resolver [PROBLEMA]:
+Opção A: [descrever]
+Opção B: [descrever]
+
+Me diga os prós e contras de cada uma.
+NÃO escolha por mim — eu decido.
+```
+
+### Por que IA > documentação pra CONCEITOS (e não pra código)
+
+| Situação | Doc oficial | IA |
+|----------|------------|-----|
+| Aprender sintaxe (`for`, `if`, `fetch`) | ✅ Melhor — exemplos reais | Funciona mas é overkill |
+| Entender conceito abstrato (REST, JWT, ORM) | Funciona mas é denso | ✅ Melhor — explica com analogias |
+| Debugar um erro | Não tem seu contexto | ✅ Melhor — você cola o erro |
+| Aprender a usar uma lib | ✅ Melhor — é a fonte oficial | Pode estar desatualizada |
+| Decisão de design | Não opina | ✅ Melhor — dá prós/contras |
+
+**Resumo: Doc oficial pra COMO fazer. IA pra ENTENDER o porquê.**
 
 ### Ritual semanal
 
