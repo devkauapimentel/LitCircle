@@ -1,1 +1,22 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente (NUNCA commitar)
 .env
+
+# Build Java
+backend-java/target/
+*.class
+*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
