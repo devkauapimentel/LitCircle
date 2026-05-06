@@ -135,11 +135,14 @@ Todas as telas usam **[PicoCSS](https://picocss.com)** — um CSS de 10KB que es
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 ```
 
-**Por quê?** Economiza 60% do trabalho de CSS e permite que Kauã foque mais em JavaScript e backend.
+**Por quê?** Economiza 60% do trabalho de CSS e permite que Kauã foque mais em JavaScript e Node.js.
 
-### Issues marcadas com 🤝 = Pair Programming
+### Por que o split já é 50/50
 
-3 issues de backend Java são feitas em **pair programming**: Rafael no teclado, Kauã acompanhando na call, ambos discutindo o código. Assim Kauã aprende backend Java sem tirar tarefas do Rafael.
+Parece que Kauã tem "mais frontend", mas olhando por TEMPO:
+- Frontend com PicoCSS → rápido (~1.5h por tela)
+- Node.js backend → complexo (#15 JWT = ~4h, #25 Socket.IO = ~5h)
+- **Proporção real: ~55% front / ~45% back ≈ 50/50**
 
 ### Milestone v0.1 — Esqueleto (Semana 1)
 
@@ -155,9 +158,9 @@ Todas as telas usam **[PicoCSS](https://picocss.com)** — um CSS de 10KB que es
 
 | # | Issue | Quem | O que é |
 |---|-------|------|---------|
-| #9 | Migration: tabela users | Rafael + Kauã 🤝 | SQL que cria a tabela (pair programming) |
+| #9 | Migration: tabela users | Rafael | SQL que cria a tabela |
 | #10 | Endpoint de cadastro | Rafael | `POST /api/auth/register` |
-| #11 | Configurar JWT | Rafael + Kauã 🤝 | Gerar e validar tokens (pair programming) |
+| #11 | Configurar JWT | Rafael | Gerar e validar tokens |
 | #12 | Endpoint de login | Rafael | `POST /api/auth/login` |
 | #13 | Tela de login | Kauã | HTML + fetch para API |
 | #14 | Tela de cadastro | Kauã | HTML + fetch para API |
@@ -180,7 +183,7 @@ Todas as telas usam **[PicoCSS](https://picocss.com)** — um CSS de 10KB que es
 
 | # | Issue | Quem | O que é |
 |---|-------|------|---------|
-| #24 | Migration messages | Rafael + Kauã 🤝 | Tabela messages (pair programming) |
+| #24 | Migration messages | Rafael | Tabela messages |
 | #25 | Socket.IO servidor | Kauã | Chat em tempo real no Node |
 | #26 | Chat no frontend | Kauã | Interface de chat com WebSocket |
 
