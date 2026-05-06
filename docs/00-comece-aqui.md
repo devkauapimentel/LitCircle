@@ -226,22 +226,26 @@ Organizadas em 5 milestones na ordem certa:
 
 ## 6. METODOLOGIA — O DIA A DIA
 
-### Comunicação oficial
+### Comunicação oficial — TUDO no GitHub
 
-| Canal | Para quê | Link |
-|-------|----------|------|
-| **GitHub Issues** | Dúvidas técnicas, travou em algo, registrar aprendizado | Comentam direto na issue relevante |
-| **GitHub Discussions** | Decisões de arquitetura, ideias, dúvidas gerais | github.com/devkauapimentel/LitCircle/discussions |
-| **Discord** (criar servidor privado) | Standup diário, chamada de voz para pair programming | Criem um servidor com 3 canais: `#geral`, `#standup`, `#bugs` |
+**Zero apps extras.** Vocês já têm GitHub aberto o dia inteiro. Usem ele pra tudo:
 
-> **Por que NÃO WhatsApp?** WhatsApp mistura vida pessoal e projeto. Mensagens se perdem, não são pesquisáveis, e não ficam documentadas. No GitHub tudo fica registrado e vinculado à issue certa. Discord é pra comunicação rápida e chamadas — não substitui o GitHub, complementa.
+| Para quê | Onde no GitHub |
+|----------|----------------|
+| Dúvida técnica / travou | **Comentário na issue** que está trabalhando |
+| Standup diário | **GitHub Discussions** → categoria "Standup" (1 post por dia) |
+| Decisão de design/arquitetura | **GitHub Discussions** → categoria "Decisões" |
+| Avisar que PR tá pronto | **PR no GitHub** → o outro recebe notificação |
+| Pair programming / call de voz | Ligação normal ou Google Meet (o que já usam) |
+
+> **Por que NÃO WhatsApp/Discord?** Mensagens se perdem, não são pesquisáveis, e não ficam vinculadas ao código. No GitHub, cada comentário fica na issue certa — daqui 3 meses vocês encontram "ah, foi assim que resolvi CORS". Zero apps novos. Tudo em **github.com/devkauapimentel/LitCircle**.
 
 ### Ritual semanal
 
 ```
 SEGUNDA (15 min): Cada um pega 1 issue do board
-DIÁRIO  (5 min):  Discord #standup: "fiz X, vou fazer Y, travei em Z"
-DOMINGO (15 min): Call no Discord: mostra o que fez → planeja próxima semana
+DIÁRIO  (5 min):  GitHub Discussions → "Standup": "fiz X, vou fazer Y, travei em Z"
+DOMINGO (15 min): Call rápida: mostra o que fez → planeja próxima semana
 ```
 
 ### GitHub Projects — Board Kanban
@@ -597,7 +601,7 @@ O QUE TENTEI: [o que já fez]
 ERRO: [cola a mensagem de erro]
 ```
 
-Se for urgente, manda no Discord `#bugs` com link para o comentário na issue.
+Se for urgente, marca o parceiro no comentário da issue com `@nome`.
 
 O parceiro tenta ajudar. Se nenhum dos dois souber, pesquisem JUNTOS na doc oficial.
 
