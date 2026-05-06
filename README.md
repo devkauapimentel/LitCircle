@@ -41,9 +41,30 @@ Um sistema onde amigos criam sessões de leitura compartilhadas, acompanham o pr
 
 ---
 
+## 🎨 Paleta de cores
+
+| Cor | Hex | Uso |
+|-----|-----|-----|
+| Navy (fundo) | `#0f172a` | Background principal |
+| Slate (cards) | `#1e293b` | Cards, inputs, sidebar |
+| Purple (primária) | `#7c3aed` | Botões, links, acentos, progress bars |
+| Indigo (gradiente) | `#4f46e5` | Gradientes com purple |
+| Amber/Gold (destaque) | `#f59e0b` | CTAs, badges, códigos, conquistas |
+| White | `#f8fafc` | Texto principal |
+| Gray | `#94a3b8` | Texto secundário |
+| Green | `#22c55e` | Status ativo, online |
+
+---
+
 ## 📸 Wireframes
 
-![Wireframes](assets/wireframes.png)
+| Login | Dashboard |
+|-------|-----------|
+| ![Login](assets/wireframe-login.png) | ![Dashboard](assets/wireframe-dashboard.png) |
+
+| Sessão de Leitura | Criar Sessão |
+|--------------------|-------------|
+| ![Sessão](assets/wireframe-session.png) | ![Criar](assets/wireframe-create.png) |
 
 ---
 
