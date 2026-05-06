@@ -322,16 +322,49 @@ Isso **é** engenharia de software. Não precisa definir a stack do zero pra est
 
 Quando vocês travarem em algo que não sabem (e VAI acontecer, toda issue), sigam este protocolo **nessa ordem**:
 
+### Passo 0: Descubra QUAL TIPO de dúvida você tem
+
+Existem dois tipos de dúvida. O caminho é diferente pra cada uma:
+
+**Tipo A — Conceitual: "O que é X? Por que funciona assim?"**
+
+| Dúvida | Onde está a resposta |
+|--------|---------------------|
+| "O que é branch, commit, PR?" | [15-git-workflow.md](15-git-workflow.md) — ensina Git do absoluto zero |
+| "Por que as pastas são assim?" | [README.md](../README.md) — explica cada pasta e arquivo |
+| "Por que dois backends?" | [05-stack-e-decisoes.md](05-stack-e-decisoes.md) + [06-integracao-java-node.md](06-integracao-java-node.md) |
+| "O que é REST? JWT? WebSocket?" | [16-glossario.md](16-glossario.md) — dicionário de termos |
+| "O que é migration? FK? UUID?" | [07-modelo-de-dados.md](07-modelo-de-dados.md) — banco explicado pra iniciante |
+| "Como funciona o deploy?" | [09-deploy.md](09-deploy.md) — passo a passo |
+| "Como fazer PR e code review?" | [11-guia-de-contribuicao.md](11-guia-de-contribuicao.md) |
+| "O que é MVC? Camadas? DTO?" | [16-glossario.md](16-glossario.md) + estrutura no README |
+
+**A resposta de dúvidas conceituais está DENTRO do repositório.** Leiam os docs antes de buscar fora.
+
+**Tipo B — Técnica: "Como faço X no código?"**
+
+| Dúvida | Onde buscar |
+|--------|------------|
+| "Como fazer fetch() em JavaScript?" | Doc oficial → javascript.info |
+| "Como criar endpoint no Spring Boot?" | Doc oficial → spring.io/guides |
+| "Como usar Socket.IO?" | Doc oficial → socket.io/docs |
+| "Como escrever SQL?" | Doc oficial → sqlbolt.com |
+
+**A resposta de dúvidas técnicas está na documentação oficial da tecnologia.** Siga os passos abaixo.
+
+---
+
 ### Passo 1: Identifique o que não sabe (2 min)
 
 Escreva em uma frase: "Eu não sei como ___"
 
 Exemplos:
-- "Eu não sei como fazer um POST com fetch no JavaScript"
-- "Eu não sei como criar uma tabela no PostgreSQL"
-- "Eu não sei como validar JWT no Spring Boot"
+- "Eu não sei como fazer um POST com fetch no JavaScript" → **Tipo B** → doc oficial
+- "Eu não sei o que é uma migration" → **Tipo A** → doc 07 do repo
+- "Eu não sei como validar JWT no Spring Boot" → **Tipo B** → doc oficial
+- "Eu não sei por que usamos duas portas" → **Tipo A** → doc 06 do repo
 
-### Passo 2: Busque na documentação oficial (30-60 min)
+### Passo 2: Busque na fonte certa (30-60 min)
 
 | Tecnologia | Documentação oficial | Onde buscar |
 |-----------|---------------------|-------------|
