@@ -4,6 +4,150 @@
 
 ---
 
+## COMO LER DOCUMENTAÇÃO (sem surtar)
+
+### A verdade: NINGUÉM lê documentação do início ao fim
+
+Nem devs sênior com 20 anos de experiência leem a documentação inteira. Documentação não é livro. É **dicionário**. Você não lê o dicionário inteiro — você busca a palavra que precisa.
+
+### O método: 4 passos
+
+**1. Ctrl+F (buscar na página)**
+
+Abriu a documentação? **NÃO leia do topo.** Aperte `Ctrl+F` e pesquise a palavra que precisa.
+
+```
+Exemplo: precisa saber como fazer um formulário em HTML
+
+1. Abre: developer.mozilla.org/pt-BR/docs/Learn/HTML
+2. Ctrl+F → digita "form"
+3. Clica no link "Your first form"
+4. Lê SÓ essa página → ignora o resto
+```
+
+**2. Leia os EXEMPLOS DE CÓDIGO primeiro, o texto depois**
+
+Documentação tem muito texto explicativo. **Pule o texto. Vá direto pro bloco de código.**
+
+```
+Quando abrir uma página de documentação:
+  1. Scroll rápido pela página
+  2. Para nos blocos de código (geralmente tem fundo cinza/preto)
+  3. Leia o código → tente entender o que faz
+  4. SÓ se não entender → leia o parágrafo ACIMA do código
+  5. Ignore todo o resto
+```
+
+**3. Timer de 15 minutos (essencial pra TDAH)**
+
+```
+Coloca timer no celular → 15 minutos
+  → Lê a doc por 15 min focado
+  → Timer tocou? PARA.
+  → Tenta implementar com o que leu
+  → Travou? Volta pra doc por mais 15 min
+  
+NUNCA mais de 15 min seguidos lendo. Implementa entre as leituras.
+```
+
+**4. Se a doc é feia/confusa → Google "nome da coisa + tutorial"**
+
+Algumas docs oficiais são péssimas. Quando isso acontecer:
+
+```
+Doc oficial confusa → Google: "[tecnologia] tutorial for beginners"
+  → Procure resultado do MDN, javascript.info ou Dev.to
+  → Esses sites têm exemplos claros e visuais
+```
+
+---
+
+### Exemplo REAL: "PostgreSQL deu erro no terminal e não sei o que fazer"
+
+Vamos simular. Vocês digitaram algo no terminal do PostgreSQL e deu erro:
+
+```
+$ psql litcircle
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed:
+No such file or directory. Is the server running locally?
+```
+
+**Como resolver SEM saber nada de PostgreSQL:**
+
+```
+PASSO 1 — Leia o erro (as palavras importantes):
+  "connection failed" + "Is the server running?"
+  → O erro TÁ DIZENDO: o servidor PostgreSQL não tá ligado
+
+PASSO 2 — Google o erro EXATO (copie e cole):
+  "psql error connection to server No such file or directory"
+
+PASSO 3 — Primeiro resultado (Stack Overflow):
+  Resposta: "You need to start the PostgreSQL service"
+  → Comando: sudo systemctl start postgresql
+
+PASSO 4 — Tenta:
+  $ sudo systemctl start postgresql
+  $ psql litcircle
+  → Funcionou!
+
+PASSO 5 — Anota na issue:
+  "PostgreSQL precisa estar rodando. Comando: sudo systemctl start postgresql"
+```
+
+**Outro erro comum:**
+
+```
+$ psql litcircle
+psql: error: FATAL: database "litcircle" does not exist
+```
+
+```
+PASSO 1 — Lê o erro: "database does not exist"
+  → O banco ainda não foi criado
+
+PASSO 2 — Google: "postgresql create database command line"
+
+PASSO 3 — Resultado: "Use createdb or CREATE DATABASE"
+  → Comando: sudo -u postgres createdb litcircle
+
+PASSO 4 — Tenta → funciona
+
+PASSO 5 — Anota: "createdb cria banco. Precisa rodar como user postgres."
+```
+
+---
+
+### Mapa: qual documentação abrir pra cada tipo de problema
+
+| Tipo de problema | Onde abrir | Como buscar |
+|-----------------|-----------|-------------|
+| Não sei uma tag HTML | [MDN HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element) | Ctrl+F → nome da tag |
+| Não sei uma propriedade CSS | [MDN CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference) | Ctrl+F → nome da propriedade |
+| Não sei um método JavaScript | [MDN JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference) | Google: "MDN [nome do método]" |
+| Não sei fazer algo em JS | [javascript.info](https://javascript.info) | Lê o índice → clica no capítulo certo |
+| Não sei uma rota do Express | [expressjs.com/guide](https://expressjs.com/en/guide/routing.html) | Ctrl+F na página de routing |
+| Erro no terminal | Google → copie o erro EXATO entre aspas | Stack Overflow tem a resposta |
+| Erro no navegador (F12) | Google → copie o erro do console | MDN ou Stack Overflow |
+| Não sei SQL | [sqlbolt.com](https://sqlbolt.com) | É interativo, faça as lições |
+| Comando git que não sei | `git [comando] --help` no terminal | Ou Google: "git how to [ação]" |
+
+---
+
+### Dicas pra TDAH
+
+| Problema | Solução |
+|----------|---------|
+| Perco o foco lendo | Timer de 15 min. Lê 15, implementa 15. Alterna. |
+| A página é muito longa | Ctrl+F → vai direto pra parte que precisa. Ignora o resto. |
+| Texto demais, sem código | Scroll até achar bloco de código. Leia só o código. |
+| Não consigo ficar sentado | Leia no celular andando. MDN funciona no mobile. |
+| Abri 15 abas e perdi o foco | Regra: máximo 3 abas abertas. Fecha o resto. |
+| Me distraí e esqueci o que tava fazendo | Antes de ler, escreva num papel: "Estou procurando: ______" |
+| Doc em inglês e não entendo tudo | Google Translate a página inteira (clique direito → Traduzir). Não é perfeito mas ajuda. |
+
+---
+
 ## REGRAS DO PROJETO (inegociáveis)
 
 ### Ferramentas PERMITIDAS — lista fechada
