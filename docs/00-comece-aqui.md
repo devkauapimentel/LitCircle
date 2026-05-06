@@ -393,35 +393,168 @@ Depois da Semana 0, você consegue pelo menos dizer: *"Eu sei que preciso de uma
 | **dev.java/learn** | Tutorial completo de Java | Mesmo princípio: leia o índice |
 | **ChatGPT/IA** | **ÚLTIMO RECURSO** — pergunte o conceito, não peça código | "O que é uma função em programação?" → entende → implementa sozinho |
 
-### O método na prática (exemplo real)
+### O método na prática — 3 exemplos REAIS do LitCircle
 
-**Issue:** "Endpoint de cadastro — `POST /api/auth/register`"
+---
 
-Cenário: Rafael nunca fez um endpoint. Nem sabe o que é endpoint.
+#### Exemplo 1: Dúvida de DESIGN — "Devo copiar HTML ou reutilizar?"
+
+**Situação:** Kauã terminou `login.html` e vai criar `dashboard.html`. Dashboard precisa do mesmo sidebar/menu que a tela de sessão vai ter. Pensa: "copio e colo o sidebar em todo HTML?"
 
 ```
-1. Lê a issue → critério: "Receber nome, email, senha via POST"
-2. Não sabe o que é POST → olha o glossário (16-glossario.md) → "POST = enviar dados"
-3. Não sabe como receber dados em Java → Google: "como receber dados POST spring boot"
-4. Google mostra: "use @PostMapping e @RequestBody"
-5. Não sabe o que é @PostMapping → Google: "PostMapping spring boot tutorial"
-6. Acha o guia oficial spring.io/guides → "Building a REST Service"
-7. Lê 30 min → entende Controller, @PostMapping, @RequestBody
-8. Volta pra issue → implementa → testa → funciona
-9. Agora sabe o que é endpoint, controller, e POST pra sempre
+1. INCÔMODO: "Se eu copiar, quando mudar o menu vou ter que mudar em 5 arquivos"
+   → Seu cérebro diz "isso tá errado" → ESSE É O SINAL de dúvida de design
+
+2. FORMULA: "como reutilizar HTML entre várias páginas sem React"
+
+3. PESQUISA: Google → "how to reuse HTML across pages vanilla javascript"
+
+4. DESCOBRE: 3 resultados aparecem:
+   a) copy-paste (ruim — manutenção impossível)
+   b) JavaScript que injeta os elementos comuns ← ESSE
+   c) Web Components (avançado, pra depois)
+
+5. IMPLEMENTA a opção (b):
 ```
+
+```javascript
+// frontend/js/components.js — roda em TODAS as páginas
+
+function renderSidebar() {
+  const sidebar = document.createElement('nav');
+  sidebar.className = 'sidebar';
+  sidebar.innerHTML = `
+    <div class="logo">📚 LitCircle</div>
+    <a href="/pages/dashboard.html" class="nav-link">Dashboard</a>
+    <a href="/pages/create-session.html" class="nav-link">Criar Sessão</a>
+    <button onclick="logout()" class="nav-link">Sair</button>
+  `;
+  document.body.prepend(sidebar);
+}
+
+// Chama quando a página carrega
+document.addEventListener('DOMContentLoaded', renderSidebar);
+```
+
+```html
+<!-- Em TODA página que precisa do sidebar: -->
+<script src="/js/components.js"></script>
+```
+
+```
+6. RESULTADO: sidebar aparece em todas as páginas. Muda em 1 lugar, muda em todas.
+7. ANOTA na issue: "Descobri que JS pode injetar HTML. Criei components.js."
+```
+
+**O sinal de dúvida de design:** quando algo parece **repetitivo** ou **errado**, você tem um problema de design. Google: "how to [evitar a repetição] in [tecnologia]".
+
+---
+
+#### Exemplo 2: Dúvida TÉCNICA — "Como guardar o token do login?"
+
+**Situação:** Kauã fez a tela de login (Issue #13). O fetch retorna o JWT. Agora precisa "salvar o token" — mas onde? Como? O critério de aceite diz `Token salvo no localStorage`.
+
+```
+1. LÊ a issue → critério: "Token salvo no localStorage"
+   → A issue DISSE onde guardar (localStorage), mas Kauã não sabe o que é
+
+2. PESQUISA: Google → "o que é localStorage javascript"
+   → Descobre: é um armazenamento no navegador que persiste entre páginas
+
+3. DOC OFICIAL: MDN → "Window.localStorage"
+   → Aprende: localStorage.setItem('chave', 'valor')
+   → Aprende: localStorage.getItem('chave')
+
+4. IMPLEMENTA:
+```
+
+```javascript
+// Após login com sucesso:
+const response = await fetch(`${CONFIG.API_URL}/api/auth/login`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password })
+});
+
+const data = await response.json();
+
+if (response.ok) {
+  localStorage.setItem('token', data.token);     // salva
+  localStorage.setItem('userName', data.user.name);
+  window.location.href = '/pages/dashboard.html'; // redireciona
+} else {
+  showError('Email ou senha incorretos');
+}
+
+// Em QUALQUER outra página que precisa autenticar:
+const token = localStorage.getItem('token');
+if (!token) {
+  window.location.href = '/pages/login.html'; // não logado → volta pro login
+}
+```
+
+```
+5. RESULTADO: login funciona, token salvo, redirecionamento ok.
+6. ANOTA na issue: "localStorage persiste entre páginas. setItem/getItem."
+```
+
+---
+
+#### Exemplo 3: Dúvida de INTEGRAÇÃO — "O Spring Boot tá retornando erro de CORS"
+
+**Situação:** Kauã terminou a tela de login e faz `fetch()` pro backend do Rafael. O navegador mostra: `Access to fetch has been blocked by CORS policy`. Nenhum dos dois sabe o que é CORS.
+
+```
+1. LÊ O ERRO: "blocked by CORS policy"
+   → Não sabe o que é → olha 16-glossario.md → "CORS: mecanismo do navegador
+     que bloqueia requests para domínios diferentes"
+
+2. ENTENDE: frontend tá em localhost:5500, Spring Boot em localhost:8080
+   → São "domínios diferentes" → navegador bloqueia por segurança
+
+3. PESQUISA: Google → "como resolver CORS spring boot"
+
+4. DESCOBRE: Rafael precisa adicionar uma config no Spring Boot:
+```
+
+```java
+// backend-java — CorsConfig.java
+@Configuration
+public class CorsConfig {
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/api/**")
+                    .allowedOrigins("http://localhost:5500")
+                    .allowedMethods("GET", "POST", "PUT", "DELETE")
+                    .allowedHeaders("*");
+            }
+        };
+    }
+}
+```
+
+```
+5. RESULTADO: frontend e backend se comunicam.
+6. ANOTAM na issue: "CORS = navegador bloqueia cross-origin. Config no Spring."
+7. LIÇÃO: erros de integração geralmente são de infra (CORS, porta, URL),
+   não de lógica. Leiam o ERRO, não adivinhem.
+```
+
+---
+
+### Resumo: como descobrir a resposta de QUALQUER dúvida
+
+| Tipo de dúvida | Como identificar | O que fazer |
+|----------------|------------------|-------------|
+| **Design** — "devo copiar ou reutilizar?" | Algo parece **repetitivo** ou **errado** | Google: "how to avoid [repetição] in [tech]" |
+| **Técnica** — "como faço X?" | A issue pede algo que **não sei fazer** | Google: "como [o que a issue pede] em [linguagem]" → doc oficial |
+| **Integração** — "por que não funciona junto?" | O **erro** aparece quando duas partes se conectam | **Leia o erro** → Google o erro **exato** → quase sempre é config |
+| **Conceito** — "o que é X?" | Aparece um **termo** que não entendo | Glossário (16) → se não tiver, Google: "o que é [termo] programação" |
 
 **A issue te diz O QUE fazer. O Google te diz COMO se chama. A doc oficial te ensina a FAZER.**
-
-### As 3 perguntas mágicas do autodidata
-
-Quando travar, faça essas 3 perguntas em ordem:
-
-1. **"O que a issue me pede pra fazer?"** → Leia os critérios de aceite
-2. **"Como se chama isso em programação?"** → Google: "como [problema] em [linguagem]"
-3. **"Onde aprendo a fazer isso?"** → Doc oficial da tecnologia que o Google indicou
-
-Isso É o método autodidata. Vocês vão ficar bons nisso com prática. **Cada issue resolvida é +1 conceito no vocabulário.**
 
 ---
 
