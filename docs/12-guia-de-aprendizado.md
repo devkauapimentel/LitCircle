@@ -356,16 +356,7 @@ TRILHA B — LITCIRCLE (o projeto 42)
 
 ## TRILHA B — A metodologia 42 pro LitCircle
 
-### Ferramentas permitidas (semanas 1-4)
-
-| ✅ PODE | ❌ NÃO PODE |
-|---------|-------------|
-| Documentação oficial (MDN, spring.io, expressjs.com) | IA (ChatGPT, Copilot, etc.) |
-| Google (pesquise o PROBLEMA em inglês) | Pedir código pra alguém |
-| Stack Overflow (leia e entenda, não copie) | Copiar código sem entender cada linha |
-| Glossário do repo (`16-glossario.md`) | Assistir vídeo antes de tentar |
-| Parceiro (Rafael, após 45 min travado) | Ficar mais de 45 min sem pedir ajuda |
-| javascript.info, sqlbolt.com, learngitbranching | Tutorial do YouTube como primeira opção |
+> Ferramentas permitidas e proibidas: veja a seção **REGRAS DO PROJETO** acima.
 
 ### Como executar cada issue (o protocolo)
 
@@ -416,6 +407,32 @@ Exemplos por issue:
 | #25 Socket.IO | Crie um chat simples com Socket.IO do zero |
 
 **Se consegue refazer do zero, você DOMINOU. Se só funciona porque copiou, você não aprendeu.**
+
+### Aprendizado profundo — Como ir de "funciona" pra "domino"
+
+Resolver a issue = aprendizado **superficial** (funciona, mas não domina). Pra dominar de verdade:
+
+**Depois de cada issue, faça estas 3 perguntas:**
+
+```
+1. "POR QUE funciona?" (não só O QUE funciona)
+   → Se fetch() funciona, pergunte: por que precisa de async/await?
+   → Se flexbox alinha, pergunte: por que justify-content e não align-items?
+   → Se o JWT valida, pergunte: por que é seguro? Como o servidor sabe que é válido?
+
+2. "O que acontece se eu MUDAR isso?"
+   → Mude um parâmetro e veja o que quebra
+   → Tire o Content-Type do fetch — o que acontece?
+   → Mude display: flex pra display: block — o que muda?
+   → Tire o middleware do Express — o que acontece?
+
+3. "Consigo explicar pro Rafael em 2 frases?"
+   → Se não consegue explicar simples, não dominou
+   → Explique de verdade (na call de domingo)
+   → Se o Rafael entendeu, você dominou
+```
+
+**Na prática, isso leva 10-15 min extras por issue.** E é o que transforma "eu resolvi" em "eu SEI".
 
 ---
 

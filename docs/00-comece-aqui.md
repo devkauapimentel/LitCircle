@@ -188,7 +188,8 @@ Organizadas em 5 milestones na ordem certa:
 | 1 | **[README.md](../README.md)** | 10 min | Visão geral, arquitetura, quem faz o quê |
 | 2 | **[01-manifesto.md](01-manifesto.md)** | 10 min | Regras da dupla, cultura |
 | 3 | **[03-requisitos-funcionais.md](03-requisitos-funcionais.md)** | 5 min | As 7 funcionalidades do MVP |
-| 4 | **[05-stack-e-decisoes.md](05-stack-e-decisoes.md)** | 5 min | Tecnologias e por quê |
+| 4 | **[12-guia-de-aprendizado.md](12-guia-de-aprendizado.md)** | 15 min | Como ler docs, pesquisar, resolver problemas (**ESSENCIAL**) |
+| 5 | **[05-stack-e-decisoes.md](05-stack-e-decisoes.md)** | 5 min | Tecnologias e por quê |
 
 **Resultado:** vocês sabem O QUE vão construir e COM O QUE.
 
@@ -218,7 +219,7 @@ Organizadas em 5 milestones na ordem certa:
 |-----------|-----------------|
 | [09-deploy.md](09-deploy.md) | Semana 8, quando forem deployar |
 | [11-guia-de-contribuicao.md](11-guia-de-contribuicao.md) | Quando fizerem o primeiro PR |
-| [12-guia-de-aprendizado.md](12-guia-de-aprendizado.md) | Quando travarem em algo técnico |
+| ~~12-guia-de-aprendizado.md~~ | **Movido pra Sessão 1 — leitura OBRIGATÓRIA** |
 | [16-glossario.md](16-glossario.md) | Quando não entenderem um termo |
 | [19-wireframes.md](19-wireframes.md) | Quando forem construir as telas |
 
@@ -469,7 +470,7 @@ Depois da Semana 0, você consegue pelo menos dizer: *"Eu sei que preciso de uma
 | **Stack Overflow** | Perguntas/respostas reais de devs | Pesquise em inglês: "how to [problema] in [linguagem]" |
 | **javascript.info** | Tutorial completo de JS com exemplos | Leia o índice — cada capítulo é um conceito |
 | **dev.java/learn** | Tutorial completo de Java | Mesmo princípio: leia o índice |
-| **ChatGPT/IA** | **ÚLTIMO RECURSO** — pergunte o conceito, não peça código | "O que é uma função em programação?" → entende → implementa sozinho |
+| **Parceiro** | Após 45 min travado, documenta na issue e chama | Discord #bugs + link da issue |
 
 ### O método na prática — 3 exemplos REAIS do LitCircle
 
