@@ -80,10 +80,15 @@ cd frontend
 
 ## 📖 Documentação
 
+### ⚡ [COMECE AQUI → docs/00-comece-aqui.md](docs/00-comece-aqui.md)
+
+> Guia completo: como tudo funciona, o que aprender, em qual ordem ler, como usar Git em dupla, e as 26 issues organizadas. **Leiam juntos antes de qualquer coisa.**
+
 ### Para começar (leiam primeiro)
 
 | # | Documento | O que explica |
 |---|-----------|---------------|
+| 0 | **[⚡ COMECE AQUI](docs/00-comece-aqui.md)** | Tudo que precisam saber antes de codar |
 | 1 | **[Manifesto](docs/01-manifesto.md)** | Regras da equipe, cultura, filosofia |
 | 2 | **[Setup do ambiente](docs/14-setup-ambiente.md)** | Instalar Git, Node, Java, PostgreSQL |
 | 3 | **[Git Workflow](docs/15-git-workflow.md)** | Branches, commits, PRs |
@@ -176,7 +181,7 @@ LitCircle/
 | Implementa regras de negócio | Validação, bcrypt, JWT |
 | Gerencia persistência | JPA, Flyway, PostgreSQL |
 
-**Issues do Rafael:** #4, #5, #6, #7, #8, #9, #13, #14, #15, #16, #17, #21
+**Issues do Rafael:** #7, #9, #10, #11, #12, #16, #17, #18, #19, #20, #24
 
 ### Kauã — Frontend + Backend Node.js
 
@@ -187,9 +192,9 @@ LitCircle/
 | Implementa chat real-time | Socket.IO no Node.js |
 | Gerencia autenticação no front | Token, redirecionamento |
 
-**Issues do Kauã:** #2, #3, #10, #11, #12, #18, #19, #20, #22, #23, #26
+**Issues do Kauã:** #5, #6, #13, #14, #15, #21, #22, #23, #25, #26, #29
 
-**Issues compartilhadas:** #1, #5, #24, #25
+**Issues compartilhadas:** #4, #8, #27, #28
 
 ---
 
