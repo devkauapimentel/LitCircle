@@ -226,26 +226,51 @@ Organizadas em 5 milestones na ordem certa:
 
 ## 6. METODOLOGIA — O DIA A DIA
 
-### Comunicação oficial — TUDO no GitHub
+### Comunicação — Decisão final
 
-**Zero apps extras.** Vocês já têm GitHub aberto o dia inteiro. Usem ele pra tudo:
+**Discord** para o dia a dia. **GitHub** para o que é do código. Ponto.
 
-| Para quê | Onde no GitHub |
-|----------|----------------|
-| Dúvida técnica / travou | **Comentário na issue** que está trabalhando |
-| Standup diário | **GitHub Discussions** → categoria "Standup" (1 post por dia) |
-| Decisão de design/arquitetura | **GitHub Discussions** → categoria "Decisões" |
-| Avisar que PR tá pronto | **PR no GitHub** → o outro recebe notificação |
-| Pair programming / call de voz | Ligação normal ou Google Meet (o que já usam) |
+| Para quê | Onde | Por quê |
+|----------|------|---------|
+| Standup diário ("fiz X, vou Y") | **Discord** → canal `#standup` | Rápido, 5 min, não precisa ser formal |
+| Pergunta rápida ("tá rodando aí?") | **Discord** → canal `#geral` | Resposta instantânea |
+| Pair programming / call de voz | **Discord** → canal de voz | Já estão lá |
+| Travou em algo técnico | **GitHub Issues** → comentário na issue | Fica documentado e vinculado ao código |
+| Decisão de design ("usamos X ou Y?") | **GitHub Discussions** | Ambos argumentam por escrito, decisão fica registrada |
+| PR pronto pra review | **GitHub PR** | Parceiro recebe notificação automática |
+| Aprendizado / o que descobri | **GitHub Issues** → comentário na issue | Vira documentação viva |
 
-> **Por que NÃO WhatsApp/Discord?** Mensagens se perdem, não são pesquisáveis, e não ficam vinculadas ao código. No GitHub, cada comentário fica na issue certa — daqui 3 meses vocês encontram "ah, foi assim que resolvi CORS". Zero apps novos. Tudo em **github.com/devkauapimentel/LitCircle**.
+> **Discord ≠ WhatsApp.** Discord tem canais separados, histórico pesquisável, e não mistura vida pessoal. Criem um servidor privado com 3 canais: `#geral`, `#standup`, `#bugs`.
+
+> **WhatsApp: NÃO.** Pode usar pra combinar horário de call, mas discussão técnica NUNCA vai pro WhatsApp. Se mandou um erro no WhatsApp, já começou errado.
+
+### IA — Pode usar? SIM, como tutor. NÃO para código.
+
+| ✅ PODE usar IA pra... | ❌ NÃO PODE usar IA pra... |
+|------------------------|---------------------------|
+| "O que é middleware?" → entender um conceito | "Faz o endpoint de login pra mim" → gerar código |
+| "O que esse erro significa?" → debugar | "Cria a tela de dashboard" → implementar a issue |
+| "Explica esse trecho linha por linha" → entender código | "Planeja a arquitetura do chat" → pensar por vocês |
+| "Qual a diferença entre PUT e PATCH?" → tirar dúvida | "Escreve o SQL das migrations" → fazer o trabalho |
+| "Como funciona o ciclo de vida do Spring Boot?" → conceito | "Organiza as pastas do projeto" → decisão de design |
+
+**A regra:** se a IA te deu a resposta e você **consegue explicar com suas palavras**, usou certo. Se a IA te deu código e você **não sabe explicar cada linha**, usou errado.
+
+**Na prática:**
+```
+BOM:  "IA, o que é CORS e por que o navegador bloqueia?"
+      → IA explica o conceito → você implementa a config sozinho
+
+RUIM: "IA, resolve o erro de CORS no meu projeto"
+      → IA dá o código pronto → você cola → funciona → não aprendeu nada
+```
 
 ### Ritual semanal
 
 ```
-SEGUNDA (15 min): Cada um pega 1 issue do board
-DIÁRIO  (5 min):  GitHub Discussions → "Standup": "fiz X, vou fazer Y, travei em Z"
-DOMINGO (15 min): Call rápida: mostra o que fez → planeja próxima semana
+SEGUNDA (15 min): Abrem o board → cada um pega 1 issue
+DIÁRIO  (5 min):  Discord #standup: "fiz X, vou fazer Y, travei em Z"
+DOMINGO (15 min): Call no Discord: mostra o que fez → planeja próxima semana
 ```
 
 ### GitHub Projects — Board Kanban
@@ -601,7 +626,7 @@ O QUE TENTEI: [o que já fez]
 ERRO: [cola a mensagem de erro]
 ```
 
-Se for urgente, marca o parceiro no comentário da issue com `@nome`.
+Se for urgente, manda no Discord `#bugs` com link pro comentário da issue.
 
 O parceiro tenta ajudar. Se nenhum dos dois souber, pesquisem JUNTOS na doc oficial.
 
