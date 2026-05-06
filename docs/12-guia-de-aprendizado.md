@@ -4,6 +4,106 @@
 
 ---
 
+## REGRAS DO PROJETO (inegociáveis)
+
+### Ferramentas PERMITIDAS — lista fechada
+
+| Ferramenta | Para quê | Link |
+|-----------|----------|------|
+| **Google** | Pesquisar problemas e erros | google.com (pesquise em inglês) |
+| **MDN Web Docs** | Referência HTML/CSS/JS | developer.mozilla.org |
+| **javascript.info** | Tutorial JavaScript completo | javascript.info |
+| **expressjs.com** | Docs do Express | expressjs.com |
+| **socket.io/docs** | Docs do Socket.IO | socket.io/docs/v4 |
+| **spring.io/guides** | Guias do Spring Boot | spring.io/guides |
+| **dev.java/learn** | Tutorial Java | dev.java/learn |
+| **sqlbolt.com** | Aprender SQL | sqlbolt.com |
+| **pgexercises.com** | Exercícios SQL | pgexercises.com |
+| **Stack Overflow** | Perguntas de outros devs | stackoverflow.com (ler, não copiar) |
+| **GitHub** (código de outros) | Ver como outros resolveram | github.com (ver estrutura, não copiar) |
+| **learngitbranching.js.org** | Aprender Git | learngitbranching.js.org |
+| **git-scm.com/book** | Pro Git Book (em PT) | git-scm.com/book/pt-br |
+| **jwt.io** | Entender JWT | jwt.io/introduction |
+| **css-tricks.com** | Guias de Flexbox/Grid | css-tricks.com |
+| **Docs do repo** | Glossário, arquitetura, API | pasta `docs/` |
+| **`man` / `--help`** | Comandos do terminal | terminal |
+| **Console do navegador (F12)** | Debug, testar JS | navegador |
+| **Rafael** (parceiro) | Após 45 min travado | Discord / GitHub Issues |
+
+### Ferramentas PROIBIDAS (semanas 1-4)
+
+| Ferramenta | Por quê |
+|-----------|---------|
+| **ChatGPT / Gemini / qualquer IA** | Cria dependência. Na 42 Piscine não tem. |
+| **GitHub Copilot** | Autocomplete = você não pensou no código. |
+| **Vídeo do YouTube como primeira opção** | Leia a doc ANTES. Vídeo é ÚLTIMO recurso. |
+| **Copiar código do Stack Overflow** | Ler e entender = OK. Ctrl+C Ctrl+V = proibido. |
+| **Pedir pra alguém fazer por você** | Nem parceiro, nem IA, nem amigo. |
+| **Curso linear durante horário do projeto** | Rocketseat é trilha separada, horário separado. |
+
+### Semana 5+: IA liberada com restrições
+
+Após 4 semanas sem IA, pode usar COM estas regras:
+- Só pra conceitos ("o que é X?"), nunca pra código
+- Sempre peça que indique a doc oficial
+- Se a IA deu a resposta e você não consegue refazer sozinho → não aprendeu
+
+---
+
+### Como pesquisar — O método exato
+
+**Passo 1: Formule em inglês**
+
+| Português | Inglês (use este) |
+|-----------|-------------------|
+| "como fazer formulário HTML" | `"html form tutorial"` |
+| "como mandar dados pro servidor" | `"javascript fetch post example"` |
+| "erro ao conectar no banco" | `"postgresql connection refused spring boot"` |
+| "como reutilizar HTML" | `"vanilla javascript reusable components"` |
+
+**Passo 2: Escolha a fonte certa**
+
+```
+PRIMEIRO resultado do Google que seja:
+  1. MDN (developer.mozilla.org)     → MELHOR pra HTML/CSS/JS
+  2. Stack Overflow (stackoverflow)  → MELHOR pra erros específicos
+  3. Doc oficial da tecnologia       → MELHOR pra frameworks
+  4. javascript.info                 → MELHOR pra JS detalhado
+  5. Dev.to / Medium                 → OK pra tutoriais
+  6. YouTube                         → ÚLTIMO RECURSO
+```
+
+**Passo 3: Leia, não assista**
+
+Ler é mais rápido, mais preciso, e treina o skill de ler documentação técnica em inglês — que é o que a 42 exige.
+
+Se REALMENTE não entendeu lendo → aí sim assista um vídeo CURTO (< 15 min) sobre o conceito específico.
+
+**Passo 4: Para erros, Google o erro EXATO**
+
+```
+ERRADO: "erro javascript fetch"
+CERTO:  "TypeError: Cannot read property 'json' of undefined"
+
+ERRADO: "spring boot não conecta banco"  
+CERTO:  "org.postgresql.util.PSQLException: Connection refused"
+```
+
+Copie a mensagem de erro EXATA entre aspas. O Google encontra quem já teve o mesmo erro.
+
+---
+
+### Quando NÃO sabe nem o que pesquisar
+
+| Situação | Faça isso |
+|----------|-----------|
+| Não sei o termo técnico | Leia `docs/16-glossario.md` — tem todos os termos do projeto |
+| Não sei o que a issue quer | Releia os critérios de aceite, palavra por palavra |
+| Entendi a issue mas não sei por onde começar | Leia o ÍNDICE do tutorial da tecnologia (javascript.info, expressjs.com) |
+| Li o índice e não achei | Google: "how to [o que a issue pede] in [linguagem]" |
+| Google não ajudou | Stack Overflow: pesquise em inglês com tags `[javascript]` `[express]` |
+| Nada funcionou (45 min) | Documenta na issue do GitHub → chama o Rafael |
+
 ## Suas 2 trilhas de estudo
 
 ```
