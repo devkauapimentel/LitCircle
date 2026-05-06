@@ -104,6 +104,77 @@ Copie a mensagem de erro EXATA entre aspas. O Google encontra quem já teve o me
 | Google não ajudou | Stack Overflow: pesquise em inglês com tags `[javascript]` `[express]` |
 | Nada funcionou (45 min) | Documenta na issue do GitHub → chama o Rafael |
 
+### Pesquise o PROBLEMA, não a solução
+
+Você NÃO precisa saber que `fetch` existe pra encontrar `fetch`. Pesquise **o que quer que aconteça** em palavras simples:
+
+| Você quer... | Pesquise isso | O Google te mostra que existe... |
+|-------------|--------------|--------------------------------|
+| Mandar dados do formulário pro servidor | `"como enviar dados html para servidor javascript"` | → `fetch()` API |
+| Guardar o login do usuário no navegador | `"como salvar dados no navegador javascript"` | → `localStorage` |
+| Fazer o menu aparecer em todas as páginas | `"como compartilhar html entre paginas sem framework"` | → injetar HTML via JavaScript |
+| Deixar dois elementos lado a lado | `"como colocar divs lado a lado css"` | → `flexbox` |
+| Mostrar dados do servidor na tela | `"como mostrar dados da api na pagina javascript"` | → `fetch()` + DOM manipulation |
+| Fazer o chat atualizar sem recarregar | `"como atualizar página em tempo real javascript"` | → `WebSocket` / `Socket.IO` |
+| Esconder uma página pra quem não tá logado | `"como proteger página javascript login"` | → checar `localStorage` token |
+| Validar email antes de enviar | `"como verificar se email é válido javascript"` | → `regex` ou `input type="email"` |
+
+### O processo mental completo (exemplo real)
+
+```
+ISSUE #13: "Tela de login — fetch('POST /api/auth/login')"
+
+Seu cérebro: "O que é fetch? Nunca vi isso."
+
+PASSO 1 — Traduz pra palavras simples:
+  "Eu quero que quando o usuário clicar 'Entrar', o email e senha
+   vão pro servidor e o servidor responde se tá certo ou errado."
+
+PASSO 2 — Google:
+  "how to send form data to server javascript"
+
+PASSO 3 — Primeiro resultado (MDN ou Stack Overflow):
+  "Use the Fetch API to make HTTP requests..."
+  → Agora você sabe que a ferramenta se chama "fetch"
+
+PASSO 4 — Doc oficial:
+  MDN: "Using the Fetch API"
+  → Lê 15 min → entende: fetch(url, { method, headers, body })
+
+PASSO 5 — Implementa:
+  Escreve o código → testa → funciona (ou não → lê o erro → corrige)
+
+PASSO 6 — Agora você sabe o que é fetch PRA SEMPRE.
+  Porque descobriu sozinho, não porque alguém te disse.
+```
+
+### Outro exemplo: "não sei como fazer a sidebar aparecer em toda página"
+
+```
+Seu cérebro: "Tenho 5 páginas HTML e todas precisam do mesmo menu lateral.
+              Copio e colo? Parece errado..."
+
+PASSO 1 — Traduz:
+  "Quero que o mesmo HTML apareça em várias páginas sem copiar"
+
+PASSO 2 — Google:
+  "how to reuse html across multiple pages vanilla javascript"
+
+PASSO 3 — Resultados:
+  - "Use JavaScript to dynamically inject common elements"
+  - "Create a components.js that builds your navbar"
+  → Agora você sabe que JS pode criar HTML dinamicamente
+
+PASSO 4 — Implementa:
+  Cria components.js → function renderSidebar() → document.body.prepend()
+  Cada HTML inclui <script src="components.js">
+
+PASSO 5 — Funciona. Muda o menu em 1 arquivo, muda em todas as páginas.
+  Aprendeu: createElement, innerHTML, DOMContentLoaded, prepend.
+```
+
+**A regra:** descreva o que QUER que aconteça → Google te dá o NOME → doc oficial te ensina a FAZER.
+
 ## Suas 2 trilhas de estudo
 
 ```
