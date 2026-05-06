@@ -261,7 +261,153 @@ Depois de ler todos os docs, vocês devem conseguir responder:
 
 ---
 
-## 8. RESUMO — O CAMINHO COMPLETO
+## 8. "MAS QUANDO VAMOS CRIAR TUDO DO ZERO?"
+
+### O que aconteceu aqui
+
+Um arquiteto (no caso, a IA) fez o que um **tech lead faz em qualquer empresa**:
+- Definiu a stack
+- Desenhou a arquitetura
+- Modelou o banco
+- Criou as issues
+- Escreveu a documentação
+
+Vocês são os **desenvolvedores**. Vocês **executam** o plano, aprendem fazendo, e tomam decisões técnicas dentro de cada issue (como implementar, qual algoritmo usar, como organizar o código).
+
+### Isso é trapaça?
+
+**Não.** É exatamente como funciona em 100% das empresas. Ninguém começa um emprego novo e planeja a arquitetura do sistema inteiro. Você recebe issues, entende o sistema lendo a documentação, e executa.
+
+### Quando vocês VÃO planejar do zero?
+
+**No próximo projeto.** Depois de construir o LitCircle, vocês terão experiência real com:
+- REST APIs
+- Banco de dados
+- Autenticação
+- WebSocket
+- Deploy
+- Git workflow
+- Trabalho em dupla
+
+Aí no próximo projeto (ver [PROJETOS-FUTUROS.md](../PROJETOS-FUTUROS.md)), **vocês** vão:
+
+```
+1. Definir o problema
+2. Escolher a stack (com conhecimento real, não chute)
+3. Desenhar a arquitetura
+4. Modelar o banco
+5. Criar as issues
+6. Estimar prazos
+7. Executar
+```
+
+**O LitCircle ensina a CONSTRUIR. O próximo projeto ensina a ARQUITETAR.**
+
+### O que vocês JÁ vão decidir no LitCircle
+
+Dentro de cada issue, vocês tomam dezenas de decisões reais:
+- Como organizar os arquivos?
+- Qual nome dar pra variável/função?
+- Como validar o input do usuário?
+- Como tratar erros?
+- Qual query SQL usar?
+- Como estilizar a tela?
+- Como lidar com estados (loading, erro, vazio)?
+
+Isso **é** engenharia de software. Não precisa definir a stack do zero pra estar aprendendo.
+
+---
+
+## 9. COMO APRENDER COISAS NOVAS — O PROTOCOLO
+
+Quando vocês travarem em algo que não sabem (e VAI acontecer, toda issue), sigam este protocolo **nessa ordem**:
+
+### Passo 1: Identifique o que não sabe (2 min)
+
+Escreva em uma frase: "Eu não sei como ___"
+
+Exemplos:
+- "Eu não sei como fazer um POST com fetch no JavaScript"
+- "Eu não sei como criar uma tabela no PostgreSQL"
+- "Eu não sei como validar JWT no Spring Boot"
+
+### Passo 2: Busque na documentação oficial (30-60 min)
+
+| Tecnologia | Documentação oficial | Onde buscar |
+|-----------|---------------------|-------------|
+| JavaScript | [javascript.info](https://javascript.info) | Capítulos por tema |
+| Node/Express | [expressjs.com](https://expressjs.com) | Guide → seção relevante |
+| HTML/CSS | [developer.mozilla.org](https://developer.mozilla.org/pt-BR/) | Pesquise o elemento/propriedade |
+| Java | [dev.java/learn](https://dev.java/learn) | Tutorial oficial |
+| Spring Boot | [spring.io/guides](https://spring.io/guides) | Guide específico do tema |
+| PostgreSQL | [postgresql.org/docs](https://www.postgresql.org/docs/) | Referência SQL |
+| Socket.IO | [socket.io/docs](https://socket.io/docs/v4/) | Get Started + guides |
+| Git | [git-scm.com/book](https://git-scm.com/book/pt-br/v2) | Pro Git Book (em português!) |
+| JWT | [jwt.io/introduction](https://jwt.io/introduction) | Página única |
+
+**REGRA: sempre a doc oficial PRIMEIRO.** Vídeo do YouTube é o ÚLTIMO recurso, não o primeiro.
+
+### Passo 3: Tente implementar (30+ min)
+
+Escreva o código. Vai dar erro. Leia o erro. Tente de novo. Isso É o aprendizado.
+
+### Passo 4: Se travar 45 min → Documente → Chame o parceiro
+
+Escreva no WhatsApp ou na issue do GitHub:
+```
+TRAVEI em: [descreva o problema]
+O QUE TENTEI: [o que já fez]
+ERRO: [cola a mensagem de erro]
+```
+
+O parceiro tenta ajudar. Se nenhum dos dois souber, pesquisem JUNTOS na doc oficial.
+
+### Passo 5: Após resolver → Anote o que aprendeu
+
+Faça um comentário na issue do GitHub explicando o que aprendeu. Isso vira documentação viva do projeto e ajuda vocês no futuro.
+
+---
+
+## 10. LISTA COMPLETA DE TUDO QUE EXISTE NO REPOSITÓRIO
+
+### Documentos que DEVEM ser lidos (em ordem)
+
+| # | Documento | O que é | Quando ler |
+|---|-----------|---------|------------|
+| 0 | **[README.md](../README.md)** | Visão geral do projeto, arquitetura, estrutura | **Agora — Sessão 1** |
+| 1 | **[01-manifesto.md](01-manifesto.md)** | Filosofia, regras da dupla, cultura | **Agora — Sessão 1** |
+| 2 | **[03-requisitos-funcionais.md](03-requisitos-funcionais.md)** | 7 funcionalidades do MVP | **Agora — Sessão 1** |
+| 3 | **[05-stack-e-decisoes.md](05-stack-e-decisoes.md)** | Stack completa + 5 decisões de arquitetura | **Agora — Sessão 1** |
+| 4 | **[06-integracao-java-node.md](06-integracao-java-node.md)** | Como Java e Node conversam via JWT | **Agora — Sessão 2** |
+| 5 | **[07-modelo-de-dados.md](07-modelo-de-dados.md)** | 4 tabelas do banco com SQL pronto | **Agora — Sessão 2** |
+| 6 | **[08-contrato-de-api.md](08-contrato-de-api.md)** | Todas as rotas REST e eventos WebSocket | **Agora — Sessão 2** |
+| 7 | **[14-setup-ambiente.md](14-setup-ambiente.md)** | Instalar Git, Node, Java, PostgreSQL | **Agora — Sessão 3** |
+| 8 | **[15-git-workflow.md](15-git-workflow.md)** | Git do zero: conceitos, comandos, PRs, conflitos | **Agora — Sessão 3** |
+| 9 | **[18-cronograma.md](18-cronograma.md)** | Roadmap de 8 semanas | **Agora — Sessão 3** |
+
+### Documentos de CONSULTA (leiam quando precisarem)
+
+| # | Documento | O que é | Quando consultar |
+|---|-----------|---------|-----------------|
+| 10 | [09-deploy.md](09-deploy.md) | Deploy 100% grátis no Render.com | Semana 8 |
+| 11 | [11-guia-de-contribuicao.md](11-guia-de-contribuicao.md) | Template de PR, code review | Ao fazer o 1º PR |
+| 12 | [12-guia-de-aprendizado.md](12-guia-de-aprendizado.md) | Mapa de estudo: o que estudar por fase | Quando travar |
+| 13 | [16-glossario.md](16-glossario.md) | Termos técnicos explicados | Quando não entender um termo |
+| 14 | [17-issues-github.md](17-issues-github.md) | Todas as 26 issues detalhadas | Referência |
+| 15 | [19-wireframes.md](19-wireframes.md) | Desenho das telas em ASCII | Quando for construir as telas |
+
+### Outros arquivos importantes
+
+| Arquivo | O que é |
+|---------|---------|
+| [PROJETOS-FUTUROS.md](../PROJETOS-FUTUROS.md) | Roadmap de evolução: React, Docker, TypeScript, IoT |
+| [.gitignore](../.gitignore) | Arquivos que o Git ignora (node_modules, .env, etc) |
+| `frontend/config.js` | URLs dos backends (dev vs produção) |
+| `backend-node/.env.example` | Template de variáveis de ambiente do Node |
+
+---
+
+## 11. RESUMO — O CAMINHO COMPLETO
 
 ```
 FASE 0 — AGORA (1 dia)
@@ -273,17 +419,25 @@ FASE 0 — AGORA (1 dia)
 └── Rafael: Java básico (dev.java/learn, 3h)
 
 FASE 1 — MVP (8 semanas)
-├── Semana 1:  Issues #4-#8 (boilerplate)
+├── Semana 1:   Issues #4-#8 (boilerplate + setup)
 ├── Semana 2-3: Issues #9-#15 (autenticação)
 ├── Semana 4-5: Issues #16-#23 (sessões)
 ├── Semana 6-7: Issues #24-#26 (chat)
-└── Semana 8:  Issues #27-#29 (deploy)
+└── Semana 8:   Issues #27-#29 (deploy + polish)
 
 FASE 2 — EVOLUÇÃO (depois do MVP)
 ├── React no frontend
 ├── Docker para empacotamento
 ├── Testes automatizados
 └── Ver PROJETOS-FUTUROS.md
+
+FASE 3 — PRÓXIMO PROJETO (vocês arquitetam do zero)
+├── VOCÊS definem o problema
+├── VOCÊS escolhem a stack
+├── VOCÊS desenham a arquitetura
+├── VOCÊS modelam o banco
+├── VOCÊS criam as issues
+└── Agora sabem o que estão fazendo porque CONSTRUÍRAM antes
 ```
 
-**Primeiro passo literal: abram um terminal e façam o setup do doc [14-setup-ambiente.md](14-setup-ambiente.md).**
+**Primeiro passo literal: abram `docs/00-comece-aqui.md` juntos e leiam da Sessão 1 até a Sessão 3.**
