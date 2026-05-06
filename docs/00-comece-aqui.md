@@ -352,6 +352,45 @@ Existem dois tipos de dúvida. O caminho é diferente pra cada uma:
 
 **A resposta de dúvidas técnicas está na documentação oficial da tecnologia.** Siga os passos abaixo.
 
+**Tipo C — Estrutural: "Eu nem sei O QUE preciso aprender pra resolver isso"**
+
+Esse é o caso mais difícil. Exemplo: a issue pede "validar o email do usuário no cadastro" e você nem sabe que precisa de uma **função**, nem o que é uma função.
+
+**Por isso a Semana 0 existe.** Os recursos de estudo da Semana 0 te dão o **vocabulário mínimo** pra pelo menos NOMEAR o que não sabe:
+
+| Estudo da Semana 0 | O que te dá |
+|--------------------|-------------|
+| JS (javascript.info cap 4-11) | Sabe o que é: variável, função, array, objeto, loop, if/else, async/await |
+| Java (dev.java/learn) | Sabe o que é: classe, método, interface, exceção |
+| SQL (sqlbolt.com) | Sabe o que é: tabela, SELECT, INSERT, WHERE, JOIN |
+| HTTP (MDN) | Sabe o que é: GET, POST, status code, header, body |
+| Git (learngitbranching) | Sabe o que é: commit, branch, merge, push, pull |
+
+Depois da Semana 0, você consegue pelo menos dizer: *"Eu sei que preciso de uma função, mas não sei como escrever."* — e aí cai no **Tipo B** (doc oficial).
+
+**E se MESMO ASSIM não souber?** O método é:
+
+```
+1. Leia a issue inteira — os critérios de aceite dizem O QUE precisa funcionar
+2. Pesquise: "como [critério de aceite] em [sua linguagem]"
+   Ex: "como validar email em JavaScript"
+3. O resultado vai te ensinar QUAL conceito usar (regex, função, biblioteca)
+4. Aí você estuda esse conceito específico na doc oficial
+5. Implementa
+```
+
+**Isso É o método autodidata.** Ninguém nasce sabendo. Todo dev profissional faz isso:
+
+```
+Problema → "Não sei resolver" → Pesquisa → Descobre o conceito →
+Estuda o conceito (30 min) → Tenta implementar → Erra → Tenta de novo →
+Funciona → Agora sabe pra sempre
+```
+
+A diferença entre um iniciante e um sênior não é que o sênior sabe tudo — é que o sênior **sabe pesquisar mais rápido** e tem mais vocabulário pra nomear o que não sabe.
+
+**Vocês vão ficar bons nisso com prática. Cada issue resolvida é +1 conceito no vocabulário.**
+
 ---
 
 ### Passo 1: Identifique o que não sabe (2 min)
