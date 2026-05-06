@@ -126,12 +126,27 @@ Tudo bem. O doc [15-git-workflow.md](15-git-workflow.md) explica **do zero** —
 
 Organizadas em 5 milestones na ordem certa:
 
+### Frontend: PicoCSS (framework CSS classless)
+
+Todas as telas usam **[PicoCSS](https://picocss.com)** — um CSS de 10KB que estiliza HTML semântico automaticamente. Você escreve HTML normal e já fica bonito. Depois customiza com CSS próprio pra detalhes específicos.
+
+```html
+<!-- Só adiciona isso no <head> de todo HTML: -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+```
+
+**Por quê?** Economiza 60% do trabalho de CSS e permite que Kauã foque mais em JavaScript e backend.
+
+### Issues marcadas com 🤝 = Pair Programming
+
+3 issues de backend Java são feitas em **pair programming**: Rafael no teclado, Kauã acompanhando na call, ambos discutindo o código. Assim Kauã aprende backend Java sem tirar tarefas do Rafael.
+
 ### Milestone v0.1 — Esqueleto (Semana 1)
 
 | # | Issue | Quem | O que é |
 |---|-------|------|---------|
 | #4 | Setup do repositório | Ambos | Estrutura de pastas pronta |
-| #5 | Boilerplate frontend | Kauã | `index.html` com "Em construção" |
+| #5 | Boilerplate frontend | Kauã | `index.html` + PicoCSS (framework CSS classless) |
 | #6 | Boilerplate backend Node | Kauã | Express + `GET /health` |
 | #7 | Boilerplate backend Java | Rafael | Spring Boot + `GET /health` |
 | #8 | PostgreSQL local | Ambos | Banco criado e rodando |
@@ -140,9 +155,9 @@ Organizadas em 5 milestones na ordem certa:
 
 | # | Issue | Quem | O que é |
 |---|-------|------|---------|
-| #9 | Migration: tabela users | Rafael | SQL que cria a tabela |
+| #9 | Migration: tabela users | Rafael + Kauã 🤝 | SQL que cria a tabela (pair programming) |
 | #10 | Endpoint de cadastro | Rafael | `POST /api/auth/register` |
-| #11 | Configurar JWT | Rafael | Gerar e validar tokens |
+| #11 | Configurar JWT | Rafael + Kauã 🤝 | Gerar e validar tokens (pair programming) |
 | #12 | Endpoint de login | Rafael | `POST /api/auth/login` |
 | #13 | Tela de login | Kauã | HTML + fetch para API |
 | #14 | Tela de cadastro | Kauã | HTML + fetch para API |
@@ -165,7 +180,7 @@ Organizadas em 5 milestones na ordem certa:
 
 | # | Issue | Quem | O que é |
 |---|-------|------|---------|
-| #24 | Migration messages | Rafael | Tabela messages |
+| #24 | Migration messages | Rafael + Kauã 🤝 | Tabela messages (pair programming) |
 | #25 | Socket.IO servidor | Kauã | Chat em tempo real no Node |
 | #26 | Chat no frontend | Kauã | Interface de chat com WebSocket |
 
@@ -181,7 +196,20 @@ Organizadas em 5 milestones na ordem certa:
 
 ## 5. SESSÕES DE LEITURA — O QUE LER JUNTOS
 
-### Sessão 1 — Entender o projeto (30 min)
+### Como ler os docs juntos
+
+```
+1. Entrem na call do Discord (voz)
+2. Cada um abre o doc na SUA tela (não precisa compartilhar tela)
+3. Leiam ao mesmo tempo, cada um no seu ritmo
+4. Terminou? Espera o outro
+5. Discutam: "entendeu tudo?" → dúvidas → próximo doc
+6. Links externos (learngitbranching, sqlbolt):
+   → NÃO abram agora — são pra Semana 0
+   → Só anotem: "tenho que fazer isso depois"
+```
+
+### Sessão 1 — Entender o projeto (45 min)
 
 | Ordem | Documento | Tempo | O que vão entender |
 |-------|-----------|-------|---------------------|
