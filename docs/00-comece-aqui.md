@@ -244,100 +244,75 @@ Organizadas em 5 milestones na ordem certa:
 
 > **WhatsApp: NÃO.** Pode usar pra combinar horário de call, mas discussão técnica NUNCA vai pro WhatsApp. Se mandou um erro no WhatsApp, já começou errado.
 
-### IA — Pode usar? SIM, como tutor. NÃO para código.
+### IA — NÃO nas primeiras 4 semanas. Depois, com regras.
 
-| ✅ PODE usar IA pra... | ❌ NÃO PODE usar IA pra... |
-|------------------------|---------------------------|
-| "O que é middleware?" → entender um conceito | "Faz o endpoint de login pra mim" → gerar código |
-| "O que esse erro significa?" → debugar | "Cria a tela de dashboard" → implementar a issue |
-| "Explica esse trecho linha por linha" → entender código | "Planeja a arquitetura do chat" → pensar por vocês |
-| "Qual a diferença entre PUT e PATCH?" → tirar dúvida | "Escreve o SQL das migrations" → fazer o trabalho |
-| "Como funciona o ciclo de vida do Spring Boot?" → conceito | "Organiza as pastas do projeto" → decisão de design |
+**Por que NÃO usar IA agora (semanas 1-4):**
 
-**A regra:** se a IA te deu a resposta e você **consegue explicar com suas palavras**, usou certo. Se a IA te deu código e você **não sabe explicar cada linha**, usou errado.
+| Motivo | Explicação |
+|--------|-----------|
+| **O desconforto ensina** | Gastar 30 min lendo docs e finalmente entender = gruda pra sempre. IA explica em 10 seg = esquece em 10 min. |
+| **A 42 proíbe na Piscine** | Na Piscine: `man pages`, Google, colegas. Se se acostumar com IA agora, vai travar lá. |
+| **Buscar > saber** | Saber navegar docs, ler Stack Overflow em inglês, formular a pergunta certa — esse é o skill que a 42 cobra. IA pula isso. |
+| **Falsa confiança** | Você acha que entendeu porque a explicação foi clara. Mas não testou, não errou, não debugou. |
 
-### Prompt base — cole SEMPRE no início da conversa com qualquer IA
+### Semanas 1-4: ZERO IA. Use apenas isso:
+
+| Travou em... | Faça isso | Recurso exato |
+|-------------|-----------|---------------|
+| Não sei o que é [termo] | Glossário do repo → doc oficial | `16-glossario.md` → MDN / spring.io |
+| Não sei a sintaxe | Google: "how to [X] in [linguagem]" | Stack Overflow (leia, não copie) |
+| Erro que não entendo | Google o erro EXATO entre aspas | `"Cannot read property of undefined"` |
+| Não sei como começar | Leia o ÍNDICE do tutorial oficial | javascript.info índice / dev.java/learn |
+| Dúvida de design | Discuta com Rafael | GitHub Discussions |
+| 45 min travado | Documenta na issue → chama parceiro | GitHub Issues |
+
+**DICA:** pesquise em **inglês**. Os resultados são 10x melhores. Mesmo que leia devagar no início, é um investimento que vale pra carreira inteira.
+
+### A partir da semana 5: IA com regras estritas
+
+Depois de 4 semanas com docs + Google + parceiro, vocês terão:
+- Vocabulário técnico real (sabem NOMEAR o que não sabem)
+- Muscle memory de buscar em documentação
+- Experiência de debugar lendo erros
+
+**Aí sim**, a IA vira ferramenta útil (não muleta):
+
+| ✅ PODE | ❌ NÃO PODE |
+|---------|-------------|
+| "O que é middleware?" → conceito | "Faz o endpoint pra mim" → gerar código |
+| "O que esse erro significa?" → entender | "Resolve esse erro" → fazer por você |
+| "Explica esse trecho linha por linha" | "Cria a tela de dashboard" |
+| "Prós e contras de A vs B?" → design | "Qual é melhor?" → decidir por você |
+
+**Se usar IA na semana 5+, use este prompt:**
 
 ```
-Você é meu colega de estudo, não meu professor. Eu sou aluno autodidata
-estudando para a 42 Rio. REGRAS:
-
-1. NUNCA me dê código pronto. Me explique o conceito e eu implemento.
-2. Se eu pedir código, me faça perguntas primeiro: "o que você já tentou?"
-3. Use analogias simples para explicar conceitos complexos.
-4. Se eu estiver errado, não corrija direto — me faça perguntas que me
-   levem a perceber o erro sozinho (método socrático).
-5. Quando eu perguntar "como fazer X", responda com:
-   - O que X é (conceito em 2 frases)
-   - Quais são as peças envolvidas (ex: "você vai precisar de A, B e C")
-   - Um pseudocódigo ou diagrama simples (não código real)
-   - "Agora tenta implementar e me mostra o que fez"
-6. Pode me mostrar SINTAXE (como se escreve um for em Java), mas não
-   LÓGICA (como resolver o problema).
-
-Meu projeto atual: LitCircle (clube de leitura).
-Stack: HTML/CSS/JS + Java Spring Boot + Node.js + PostgreSQL.
+Você é meu colega de estudo, não meu professor. REGRAS:
+1. NUNCA me dê código pronto. Explique o conceito e eu implemento.
+2. Se eu pedir código, pergunte: "o que você já tentou?"
+3. Use analogias simples.
+4. Se eu estiver errado, me faça perguntas que me levem a perceber sozinho.
+5. Pode mostrar SINTAXE, mas não LÓGICA.
+6. Sempre me indique a página EXATA da documentação oficial.
 ```
 
-### Prompts prontos por situação
+**Prompts por situação (semana 5+):**
 
-**Quando não entender um conceito:**
+| Situação | Prompt |
+|----------|--------|
+| Não entendo conceito | "Explica [X] com analogia. Me indica a doc oficial pra ler." |
+| Não sei começar issue | "Quais conceitos preciso? Em que ordem? Me indica onde ler." |
+| Erro que não entendo | "O que esse erro diz? NÃO resolva. Me indica onde ler." |
+| Código que encontrei | "Explica linha por linha: o que faz e POR QUE." |
+| Dúvida de design | "Prós e contras de A vs B. NÃO escolha por mim." |
+
+### Resumo definitivo
+
 ```
-Explica [CONCEITO] como se eu tivesse 12 anos.
-Depois me dá uma analogia do mundo real.
-Não me dê código, só o conceito.
+SEMANAS 1-4:  Docs oficiais + Google + parceiro. ZERO IA.
+SEMANA 5+:    IA como colega socrático (conceitos, nunca código).
+SEMPRE:       Doc oficial é a fonte primária. IA complementa, não substitui.
 ```
-
-**Quando não souber como começar uma issue:**
-```
-Estou na issue: [COLAR CRITÉRIOS DE ACEITE]
-Não sei por onde começar. Me diga:
-1. Quais conceitos eu preciso saber
-2. Em que ordem atacar os critérios
-3. Onde ler sobre cada conceito (doc oficial, não tutorial)
-NÃO me dê código.
-```
-
-**Quando tiver um erro que não entende:**
-```
-Estou recebendo esse erro:
-[COLAR ERRO COMPLETO]
-
-Meu código relevante:
-[COLAR TRECHO — máximo 20 linhas]
-
-Me explique O QUE o erro está dizendo, não como resolver.
-Quero entender a causa pra corrigir sozinho.
-```
-
-**Quando quiser entender código que encontrou:**
-```
-Explica esse trecho linha por linha.
-Pra cada linha, me diz: o que faz e POR QUE está ali.
-[COLAR CÓDIGO]
-```
-
-**Quando tiver dúvida de design:**
-```
-Tenho duas opções pra resolver [PROBLEMA]:
-Opção A: [descrever]
-Opção B: [descrever]
-
-Me diga os prós e contras de cada uma.
-NÃO escolha por mim — eu decido.
-```
-
-### Por que IA > documentação pra CONCEITOS (e não pra código)
-
-| Situação | Doc oficial | IA |
-|----------|------------|-----|
-| Aprender sintaxe (`for`, `if`, `fetch`) | ✅ Melhor — exemplos reais | Funciona mas é overkill |
-| Entender conceito abstrato (REST, JWT, ORM) | Funciona mas é denso | ✅ Melhor — explica com analogias |
-| Debugar um erro | Não tem seu contexto | ✅ Melhor — você cola o erro |
-| Aprender a usar uma lib | ✅ Melhor — é a fonte oficial | Pode estar desatualizada |
-| Decisão de design | Não opina | ✅ Melhor — dá prós/contras |
-
-**Resumo: Doc oficial pra COMO fazer. IA pra ENTENDER o porquê.**
 
 ### Ritual semanal
 
