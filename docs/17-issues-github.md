@@ -1,6 +1,7 @@
-# Issues — Cadastre no GitHub Projects
+# Issues — Referência completa
 
-> Copie cada issue e crie no GitHub. Organize no board Kanban.
+> Todas as 26 issues já estão criadas no GitHub com labels e milestones. Este documento é a referência detalhada de cada uma.
+> Acesse: github.com/devkauapimentel/LitCircle/issues
 
 ---
 
@@ -33,7 +34,7 @@
 
 ## MILESTONE v0.1 — Esqueleto
 
-### ISSUE #1 — Setup do repositório e estrutura
+### ISSUE #4 — Setup do repositório e estrutura
 
 **Labels:** `chore`
 **Milestone:** v0.1
@@ -47,7 +48,7 @@
 
 ---
 
-### ISSUE #2 — Boilerplate frontend
+### ISSUE #5 — Boilerplate frontend
 
 **Labels:** `chore` `frontend`
 **Milestone:** v0.1
@@ -61,7 +62,7 @@
 
 ---
 
-### ISSUE #3 — Boilerplate backend Node.js
+### ISSUE #6 — Boilerplate backend Node.js
 
 **Labels:** `chore` `backend-node`
 **Milestone:** v0.1
@@ -78,7 +79,7 @@
 
 ---
 
-### ISSUE #4 — Boilerplate backend Java
+### ISSUE #7 — Boilerplate backend Java
 
 **Labels:** `chore` `backend-java`
 **Milestone:** v0.1
@@ -93,7 +94,7 @@
 
 ---
 
-### ISSUE #5 — PostgreSQL local configurado
+### ISSUE #8 — PostgreSQL local configurado
 
 **Labels:** `chore`
 **Milestone:** v0.1
@@ -109,7 +110,7 @@
 
 ## MILESTONE v0.2 — Autenticação
 
-### ISSUE #6 — Migration: tabela users
+### ISSUE #9 — Migration: tabela users
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.2
@@ -122,7 +123,7 @@
 
 ---
 
-### ISSUE #7 — Endpoint de cadastro
+### ISSUE #10 — Endpoint de cadastro
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.2
@@ -138,7 +139,7 @@
 
 ---
 
-### ISSUE #8 — Configurar JWT no Spring Boot
+### ISSUE #11 — Configurar JWT no Spring Boot
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.2
@@ -153,7 +154,7 @@
 
 ---
 
-### ISSUE #9 — Endpoint de login
+### ISSUE #12 — Endpoint de login
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.2
@@ -167,7 +168,7 @@
 
 ---
 
-### ISSUE #10 — Tela de login
+### ISSUE #13 — Tela de login
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.2
@@ -184,7 +185,7 @@
 
 ---
 
-### ISSUE #11 — Tela de cadastro
+### ISSUE #14 — Tela de cadastro
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.2
@@ -199,7 +200,7 @@
 
 ---
 
-### ISSUE #12 — Middleware JWT no Node.js
+### ISSUE #15 — Middleware JWT no Node.js
 
 **Labels:** `feature` `backend-node`
 **Milestone:** v0.2
@@ -215,7 +216,7 @@
 
 ## MILESTONE v0.3 — Sessões
 
-### ISSUE #13 — Migrations: sessions e session_members
+### ISSUE #16 — Migrations: sessions e session_members
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.3
@@ -228,7 +229,7 @@
 
 ---
 
-### ISSUE #14 — Criar sessão de leitura
+### ISSUE #17 — Criar sessão de leitura
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.3
@@ -242,7 +243,7 @@
 
 ---
 
-### ISSUE #15 — Entrar em sessão por código
+### ISSUE #18 — Entrar em sessão por código
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.3
@@ -257,7 +258,7 @@
 
 ---
 
-### ISSUE #16 — Listar sessões e detalhes
+### ISSUE #19 — Listar sessões e detalhes
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.3
@@ -270,7 +271,7 @@
 
 ---
 
-### ISSUE #17 — Atualizar progresso de leitura
+### ISSUE #20 — Atualizar progresso de leitura
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.3
@@ -284,7 +285,7 @@
 
 ---
 
-### ISSUE #18 — Tela: Dashboard
+### ISSUE #21 — Tela: Dashboard
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.3
@@ -298,7 +299,7 @@
 
 ---
 
-### ISSUE #19 — Tela: Criar sessão
+### ISSUE #22 — Tela: Criar sessão
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.3
@@ -311,7 +312,7 @@
 
 ---
 
-### ISSUE #20 — Tela: Sessão de leitura
+### ISSUE #23 — Tela: Sessão de leitura
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.3
@@ -327,7 +328,7 @@
 
 ## MILESTONE v0.4 — Chat
 
-### ISSUE #21 — Migration: tabela messages
+### ISSUE #24 — Migration: tabela messages
 
 **Labels:** `feature` `backend-java`
 **Milestone:** v0.4
@@ -339,7 +340,7 @@
 
 ---
 
-### ISSUE #22 — Servidor de chat com Socket.IO
+### ISSUE #25 — Servidor de chat com Socket.IO
 
 **Labels:** `feature` `backend-node`
 **Milestone:** v0.4
@@ -354,7 +355,7 @@
 
 ---
 
-### ISSUE #23 — Chat no frontend
+### ISSUE #26 — Chat no frontend
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.4
@@ -371,7 +372,7 @@
 
 ## MILESTONE v0.5 — Deploy + Polish
 
-### ISSUE #24 — Deploy no Render.com
+### ISSUE #27 — Deploy no Render.com
 
 **Labels:** `chore`
 **Milestone:** v0.5
@@ -387,7 +388,7 @@
 
 ---
 
-### ISSUE #25 — Teste end-to-end
+### ISSUE #28 — Teste end-to-end
 
 **Labels:** `integration`
 **Milestone:** v0.5
@@ -400,7 +401,7 @@
 
 ---
 
-### ISSUE #26 — Loading states e mensagens de erro
+### ISSUE #29 — Loading states e mensagens de erro
 
 **Labels:** `feature` `frontend`
 **Milestone:** v0.5
@@ -417,9 +418,10 @@
 
 | Milestone | Issues | Semanas |
 |-----------|--------|---------|
-| v0.1 — Esqueleto | #1 a #5 | 1 |
-| v0.2 — Autenticação | #6 a #12 | 2 |
-| v0.3 — Sessões | #13 a #20 | 2 |
-| v0.4 — Chat | #21 a #23 | 2 |
-| v0.5 — Deploy | #24 a #26 | 1 |
+| v0.1 — Esqueleto | #4 a #8 | 1 |
+| v0.2 — Autenticação | #9 a #15 | 2 |
+| v0.3 — Sessões | #16 a #23 | 2 |
+| v0.4 — Chat | #24 a #26 | 2 |
+| v0.5 — Deploy | #27 a #29 | 1 |
 | **Total** | **26 issues** | **~8 semanas** |
+

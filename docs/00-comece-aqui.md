@@ -368,28 +368,48 @@ Esse é o caso mais difícil. Exemplo: a issue pede "validar o email do usuário
 
 Depois da Semana 0, você consegue pelo menos dizer: *"Eu sei que preciso de uma função, mas não sei como escrever."* — e aí cai no **Tipo B** (doc oficial).
 
-**E se MESMO ASSIM não souber?** O método é:
+**E se MESMO ASSIM não souber?** Use estas ferramentas para DESCOBRIR o que precisa:
+
+### Ferramentas de descoberta (ONDE pesquisar quando nem sabe o que pesquisar)
+
+| Ferramenta | Como usar | Exemplo |
+|-----------|-----------|---------|
+| **Google** | Pesquise o PROBLEMA, não a solução | "como verificar se email é válido javascript" → descobre que existe regex |
+| **MDN Web Docs** | Referência completa de HTML/CSS/JS | Pesquise qualquer coisa web ali: mdn.dev |
+| **Stack Overflow** | Perguntas/respostas reais de devs | Pesquise em inglês: "how to [problema] in [linguagem]" |
+| **javascript.info** | Tutorial completo de JS com exemplos | Leia o índice — cada capítulo é um conceito |
+| **dev.java/learn** | Tutorial completo de Java | Mesmo princípio: leia o índice |
+| **ChatGPT/IA** | **ÚLTIMO RECURSO** — pergunte o conceito, não peça código | "O que é uma função em programação?" → entende → implementa sozinho |
+
+### O método na prática (exemplo real)
+
+**Issue:** "Endpoint de cadastro — `POST /api/auth/register`"
+
+Cenário: Rafael nunca fez um endpoint. Nem sabe o que é endpoint.
 
 ```
-1. Leia a issue inteira — os critérios de aceite dizem O QUE precisa funcionar
-2. Pesquise: "como [critério de aceite] em [sua linguagem]"
-   Ex: "como validar email em JavaScript"
-3. O resultado vai te ensinar QUAL conceito usar (regex, função, biblioteca)
-4. Aí você estuda esse conceito específico na doc oficial
-5. Implementa
+1. Lê a issue → critério: "Receber nome, email, senha via POST"
+2. Não sabe o que é POST → olha o glossário (16-glossario.md) → "POST = enviar dados"
+3. Não sabe como receber dados em Java → Google: "como receber dados POST spring boot"
+4. Google mostra: "use @PostMapping e @RequestBody"
+5. Não sabe o que é @PostMapping → Google: "PostMapping spring boot tutorial"
+6. Acha o guia oficial spring.io/guides → "Building a REST Service"
+7. Lê 30 min → entende Controller, @PostMapping, @RequestBody
+8. Volta pra issue → implementa → testa → funciona
+9. Agora sabe o que é endpoint, controller, e POST pra sempre
 ```
 
-**Isso É o método autodidata.** Ninguém nasce sabendo. Todo dev profissional faz isso:
+**A issue te diz O QUE fazer. O Google te diz COMO se chama. A doc oficial te ensina a FAZER.**
 
-```
-Problema → "Não sei resolver" → Pesquisa → Descobre o conceito →
-Estuda o conceito (30 min) → Tenta implementar → Erra → Tenta de novo →
-Funciona → Agora sabe pra sempre
-```
+### As 3 perguntas mágicas do autodidata
 
-A diferença entre um iniciante e um sênior não é que o sênior sabe tudo — é que o sênior **sabe pesquisar mais rápido** e tem mais vocabulário pra nomear o que não sabe.
+Quando travar, faça essas 3 perguntas em ordem:
 
-**Vocês vão ficar bons nisso com prática. Cada issue resolvida é +1 conceito no vocabulário.**
+1. **"O que a issue me pede pra fazer?"** → Leia os critérios de aceite
+2. **"Como se chama isso em programação?"** → Google: "como [problema] em [linguagem]"
+3. **"Onde aprendo a fazer isso?"** → Doc oficial da tecnologia que o Google indicou
+
+Isso É o método autodidata. Vocês vão ficar bons nisso com prática. **Cada issue resolvida é +1 conceito no vocabulário.**
 
 ---
 

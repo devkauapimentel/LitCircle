@@ -15,35 +15,35 @@
 ```
 SEMANA 1  │ v0.1 — Esqueleto
           │ Setup, estrutura, boilerplate, health checks, PostgreSQL
-          │ Issues #1 a #5
+          │ Issues #4 a #8
 
 SEMANA 2  │ v0.2 — Autenticação (parte 1)
           │ Migration users, endpoints register/login, JWT
-          │ Issues #6 a #9
+          │ Issues #9 a #12
 
 SEMANA 3  │ v0.2 — Autenticação (parte 2)
           │ Telas login/cadastro, middleware JWT no Node.js
-          │ Issues #10 a #12
+          │ Issues #13 a #15
 
 SEMANA 4  │ v0.3 — Sessões (parte 1)
           │ Migrations, criar/entrar sessão (backend)
-          │ Issues #13 a #15
+          │ Issues #16 a #18
 
 SEMANA 5  │ v0.3 — Sessões (parte 2)
           │ Listar sessões, progresso, telas frontend
-          │ Issues #16 a #20
+          │ Issues #19 a #23
 
 SEMANA 6  │ v0.4 — Chat (parte 1)
           │ Migration messages, servidor Socket.IO
-          │ Issues #21 a #22
+          │ Issues #24 a #25
 
 SEMANA 7  │ v0.4 — Chat (parte 2)
           │ Chat no frontend, presença
-          │ Issue #23
+          │ Issue #26
 
 SEMANA 8  │ v0.5 — Deploy + Polish
           │ Deploy Render, teste e2e, loading states
-          │ Issues #24 a #26
+          │ Issues #27 a #29
 
 🎉 MVP v0 ENTREGUE
 ```
