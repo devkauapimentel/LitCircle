@@ -226,10 +226,22 @@ Organizadas em 5 milestones na ordem certa:
 
 ## 6. METODOLOGIA — O DIA A DIA
 
+### Comunicação oficial
+
+| Canal | Para quê | Link |
+|-------|----------|------|
+| **GitHub Issues** | Dúvidas técnicas, travou em algo, registrar aprendizado | Comentam direto na issue relevante |
+| **GitHub Discussions** | Decisões de arquitetura, ideias, dúvidas gerais | github.com/devkauapimentel/LitCircle/discussions |
+| **Discord** (criar servidor privado) | Standup diário, chamada de voz para pair programming | Criem um servidor com 3 canais: `#geral`, `#standup`, `#bugs` |
+
+> **Por que NÃO WhatsApp?** WhatsApp mistura vida pessoal e projeto. Mensagens se perdem, não são pesquisáveis, e não ficam documentadas. No GitHub tudo fica registrado e vinculado à issue certa. Discord é pra comunicação rápida e chamadas — não substitui o GitHub, complementa.
+
+### Ritual semanal
+
 ```
 SEGUNDA (15 min): Cada um pega 1 issue do board
-DIÁRIO  (5 min):  WhatsApp: "fiz X, vou fazer Y, travei em Z"
-DOMINGO (15 min): Mostra o que fez → planeja próxima semana
+DIÁRIO  (5 min):  Discord #standup: "fiz X, vou fazer Y, travei em Z"
+DOMINGO (15 min): Call no Discord: mostra o que fez → planeja próxima semana
 ```
 
 ### GitHub Projects — Board Kanban
@@ -445,12 +457,14 @@ Escreva o código. Vai dar erro. Leia o erro. Tente de novo. Isso É o aprendiza
 
 ### Passo 4: Se travar 45 min → Documente → Chame o parceiro
 
-Escreva no WhatsApp ou na issue do GitHub:
+Escreva **na issue do GitHub** (não no WhatsApp!):
 ```
 TRAVEI em: [descreva o problema]
 O QUE TENTEI: [o que já fez]
 ERRO: [cola a mensagem de erro]
 ```
+
+Se for urgente, manda no Discord `#bugs` com link para o comentário na issue.
 
 O parceiro tenta ajudar. Se nenhum dos dois souber, pesquisem JUNTOS na doc oficial.
 

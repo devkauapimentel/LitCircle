@@ -48,9 +48,9 @@ Para evitar paralisia por análise, cada domínio tem um dono. O dono bate o mar
 
 | Domínio | Líder (bate o martelo) | Papel do outro |
 |---|---|---|
-| Frontend — React, UI, UX, componentes | **Kauã** | Rafael sugere |
+| Frontend — HTML/CSS/JS, UI, UX, telas | **Kauã** | Rafael sugere |
 | Backend Java — Spring Boot, PostgreSQL, JPA | **Rafael** | Kauã sugere |
-| Backend Node.js — chat, Pomodoro, WebSocket | **Kauã** | Rafael revisa |
+| Backend Node.js — chat, WebSocket, Socket.IO | **Kauã** | Rafael revisa |
 | Integrações — rotas, JSON, regras de negócio | **Ambos (50/50)** | Consenso obrigatório |
 
 Na terra comum (integrações), não há dono. Ambos são co-arquitetos. A decisão exige consenso técnico unânime. Se não houver consenso, a discussão vai para um documento de ADR (Architecture Decision Record) e cada um apresenta seus argumentos por escrito antes de decidir.

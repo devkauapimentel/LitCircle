@@ -249,11 +249,11 @@ LitCircle/
 
 | Semana | Milestone | Issues |
 |--------|-----------|--------|
-| 1 | v0.1 — Esqueleto | #1 a #5 |
-| 2-3 | v0.2 — Autenticação | #6 a #12 |
-| 4-5 | v0.3 — Sessões | #13 a #20 |
-| 6-7 | v0.4 — Chat | #21 a #23 |
-| 8 | v0.5 — Deploy | #24 a #26 |
+| 1 | v0.1 — Esqueleto | #4 a #8 |
+| 2-3 | v0.2 — Autenticação | #9 a #15 |
+| 4-5 | v0.3 — Sessões | #16 a #23 |
+| 6-7 | v0.4 — Chat | #24 a #26 |
+| 8 | v0.5 — Deploy | #27 a #29 |
 
 **Detalhes:** [docs/18-cronograma.md](docs/18-cronograma.md)
 
