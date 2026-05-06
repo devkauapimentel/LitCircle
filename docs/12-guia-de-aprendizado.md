@@ -436,6 +436,254 @@ Resolver a issue = aprendizado **superficial** (funciona, mas não domina). Pra 
 
 ---
 
+## Como reutilizar HTML/CSS/JS sem framework (componentes vanilla)
+
+### O problema
+
+Você tem 5 páginas. Todas precisam do mesmo menu, logo, e botão "Sair". O que fazer?
+
+```
+❌ ERRADO: copiar e colar o menu em cada HTML
+   → Muda o menu → tem que mudar em 5 arquivos → esquece 1 → bug
+
+✅ CERTO: JavaScript cria o menu pra você em TODA página
+   → Muda em 1 arquivo (components.js) → muda em todas as páginas
+```
+
+### A estrutura de arquivos
+
+```
+frontend/
+├── css/
+│   └── style.css           ← 1 CSS pra TODAS as páginas
+├── js/
+│   ├── components.js       ← funções que criam menu, barra, cards
+│   ├── utils.js            ← funções utilitárias (fetch, auth)
+│   ├── login.js            ← lógica SÓ da tela de login
+│   ├── dashboard.js        ← lógica SÓ do dashboard
+│   └── session.js          ← lógica SÓ da sessão
+├── pages/
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   └── session.html
+└── index.html
+```
+
+**Regra:** `style.css` e `components.js` são importados em TODA página. Cada página tem seu próprio `.js` com a lógica específica.
+
+### Como funciona na prática
+
+**1. `components.js` — funções que criam pedaços de HTML**
+
+```javascript
+// js/components.js — importado em TODA página
+
+// COMPONENTE: Menu lateral
+function criarMenu() {
+  const menu = document.createElement('nav');
+  menu.className = 'sidebar';
+  menu.innerHTML = `
+    <div class="logo">📚 LitCircle</div>
+    <a href="/pages/dashboard.html">Dashboard</a>
+    <a href="/pages/create-session.html">Criar Sessão</a>
+    <button onclick="logout()">Sair</button>
+  `;
+  document.body.prepend(menu);
+}
+
+// COMPONENTE: Barra de pesquisa (recebe placeholder como parâmetro)
+function criarBarraPesquisa(placeholder) {
+  const barra = document.createElement('div');
+  barra.className = 'search-bar';
+  barra.innerHTML = `
+    <input type="text" placeholder="${placeholder}">
+    <button>🔍</button>
+  `;
+  return barra;
+}
+
+// COMPONENTE: Card de sessão (recebe dados como parâmetro)
+function criarCardSessao(sessao) {
+  const card = document.createElement('div');
+  card.className = 'card-sessao';
+  card.innerHTML = `
+    <h3>${sessao.bookTitle}</h3>
+    <p>${sessao.members} participantes</p>
+    <progress value="${sessao.progress}" max="100"></progress>
+  `;
+  return card;
+}
+
+// Roda automático quando a página carrega
+document.addEventListener('DOMContentLoaded', () => {
+  const pagina = window.location.pathname;
+  // Menu aparece em TODA página exceto login e cadastro
+  if (!pagina.includes('login') && !pagina.includes('register')) {
+    criarMenu();
+  }
+});
+```
+
+**2. Cada página importa e usa os componentes**
+
+```html
+<!-- pages/dashboard.html -->
+<html>
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- O MENU APARECE SOZINHO (components.js cria automaticamente) -->
+
+  <main>
+    <h1>Minhas Sessões</h1>
+    <div id="barra"></div>
+    <div id="sessoes"></div>
+  </main>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
+```
+
+```javascript
+// js/dashboard.js — lógica SÓ do dashboard
+
+// Usa o COMPONENTE barra de pesquisa
+const barra = criarBarraPesquisa('Buscar sessão...');
+document.getElementById('barra').appendChild(barra);
+
+// Usa o COMPONENTE card pra cada sessão (dados viriam da API)
+const sessoes = [
+  { bookTitle: 'O Hobbit', members: 3, progress: 45 },
+  { bookTitle: '1984', members: 2, progress: 80 },
+];
+
+const container = document.getElementById('sessoes');
+sessoes.forEach(sessao => {
+  const card = criarCardSessao(sessao);  // REUTILIZA a função
+  container.appendChild(card);
+});
+```
+
+**3. O resultado visual**
+
+```
+┌──────────────────────────────────────────────┐
+│ 📚 LitCircle                                 │ ← criarMenu()
+│ Dashboard | Criar Sessão | Sair              │    (automático)
+├──────────────────────────────────────────────┤
+│ [Buscar sessão...               ] [🔍]       │ ← criarBarraPesquisa()
+├──────────────────────────────────────────────┤
+│ ┌──────────────────┐ ┌──────────────────┐    │
+│ │ O Hobbit         │ │ 1984             │    │ ← criarCardSessao()
+│ │ 3 participantes  │ │ 2 participantes  │    │    chamada 2 vezes
+│ │ ████████░░░ 45%  │ │ █████████░ 80%   │    │
+│ └──────────────────┘ └──────────────────┘    │
+└──────────────────────────────────────────────┘
+```
+
+### O conceito por trás
+
+```
+FUNÇÃO JavaScript = COMPONENTE
+
+criarMenu()              → chama 1 vez (automático em toda página)
+criarBarraPesquisa(texto) → chama onde quiser, quantas vezes quiser
+criarCardSessao(dados)   → chama N vezes (1 por sessão)
+
+É isso. Função que retorna HTML = componente reutilizável.
+React faz EXATAMENTE isso por baixo. Você tá aprendendo o fundamento.
+```
+
+### Exercício: teste agora na sua máquina (5 min)
+
+Pra ver funcionando antes de começar o projeto:
+
+```
+1. Crie uma pasta "teste" no Desktop
+2. Dentro, crie 2 arquivos:
+```
+
+```html
+<!-- teste/index.html -->
+<html>
+<body>
+  <h1>Página 1</h1>
+  <div id="cards"></div>
+  <a href="pagina2.html">Ir pra página 2</a>
+  <script src="components.js"></script>
+  <script>
+    const frutas = ['Maçã', 'Banana', 'Uva'];
+    frutas.forEach(fruta => {
+      const card = criarCard(fruta);
+      document.getElementById('cards').appendChild(card);
+    });
+  </script>
+</body>
+</html>
+```
+
+```html
+<!-- teste/pagina2.html -->
+<html>
+<body>
+  <h1>Página 2</h1>
+  <div id="cards"></div>
+  <a href="index.html">Voltar</a>
+  <script src="components.js"></script>
+  <script>
+    const cores = ['Azul', 'Verde', 'Vermelho'];
+    cores.forEach(cor => {
+      const card = criarCard(cor);
+      document.getElementById('cards').appendChild(card);
+    });
+  </script>
+</body>
+</html>
+```
+
+```javascript
+// teste/components.js
+function criarCard(texto) {
+  const div = document.createElement('div');
+  div.style.border = '1px solid black';
+  div.style.padding = '10px';
+  div.style.margin = '5px';
+  div.textContent = texto;
+  return div;
+}
+```
+
+```
+3. Abra index.html no navegador
+4. Veja: 3 cards aparecem
+5. Clique "Ir pra página 2" → 3 cards diferentes aparecem
+6. MESMO components.js → DUAS páginas diferentes → REUTILIZOU
+
+Parabéns, você entendeu componentes vanilla.
+```
+
+### Como descobrir isso sozinho (metodologia 42)
+
+```
+Seu cérebro: "Tenho 5 páginas com o mesmo menu. Copiar e colar?"
+                                    ↓
+Incômodo: "Se eu mudar o menu, tenho que mudar 5 arquivos..."
+                                    ↓
+Google: "how to reuse html across multiple pages without framework"
+                                    ↓
+Resultado: "Use JavaScript to create elements dynamically"
+                                    ↓
+MDN: "Document.createElement()" → lê 10 min → entende
+                                    ↓
+Implementa: cria components.js → funciona → aprendeu PRA SEMPRE
+```
+
+---
+
 ## Como aprender cada tecnologia (pela trilha B)
 
 A trilha B não tem "módulos". Você aprende sob demanda. Mas cada tecnologia tem um recurso primário e um exercício de validação.
